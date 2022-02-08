@@ -1,0 +1,37 @@
+nav {
+  min-height: 8vh;
+}
+
+.logo {
+  display: flex;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  background-color: #7aa2bc;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  justify-content: space-around;
+}
+
+.nav-bar {
+  display: flex;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+
+  span a {
+    float: right;
+  }
+}

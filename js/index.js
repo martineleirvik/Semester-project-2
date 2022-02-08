@@ -1,11 +1,11 @@
 import { baseUrl } from "./settings/api.js";
 
-const articlesUrl = baseUrl + "products";
+const productsUrl = baseUrl + "products";
 
 (async function() {
 
     try {
-        const response = await fetch(articlesUrl);
+        const response = await fetch(productsUrl);
         const json = await response.json();
         console.log(json);
 
