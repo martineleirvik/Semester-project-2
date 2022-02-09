@@ -1,47 +1,98 @@
 nav {
-  min-height: 8vh;
+  min-height: 10vh;
 
   .logo {
     text-transform: uppercase;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     letter-spacing: 2px;
     background-color: getColour(primary);
-    color: rgb(255, 255, 255);
-    padding: 20px;
+    color: getColour(allwhite);
+    padding: 15px 0 15px 30px;
     font-family: $font-primary;
-  }
-}
 
-.nav-bar {
-  font-family: $font-secondary;
-  border-bottom: 1px solid getColour(secondary);
+    h1 {
+      font-size: 2rem;
+    }
 
-  li {
-    list-style: none;
-  }
+    .burger-menu {
+      display: none;
+    }
 
-  a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-  }
-
-  .nav-links {
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-    margin: 10px 150px;
-
-    a {
-      font-size: 20px;
+    .burger-menu div {
+      width: 30px;
+      height: 3px;
+      background-color: getColour(white);
+      margin: 7px 30px;
     }
   }
 
-  span a {
-    float: right;
-    border: 4px solid getColour(primary);
-    padding: 10px 15px;
-    border-radius: 30px;
-    font-size: 16px;
-    margin: 10px 30px 0 0;
+  .nav-bar {
+    font-family: $font-secondary;
+    border-bottom: 1px solid getColour(secondary);
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: space-around;
+
+      padding: 10px 0 5px 0;
+
+      a {
+        font-size: 1rem;
+      }
+    }
+
+    span a {
+      float: right;
+      border: 3px solid getColour(primary);
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      margin: 10px 30px 0 0;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    .logo h1 {
+    }
+    .nav-links {
+      position: absolute;
+      right: 0px;
+      height: 90vh;
+      top: 10vh;
+      background-color: getColour(primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(100%);
+      width: 50%;
+
+      .nav-links li {
+        opacity: 1;
+      }
+
+      .burger-menu {
+        display: block;
+      }
+    }
   }
 }
