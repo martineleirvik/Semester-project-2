@@ -1,0 +1,13 @@
+$font-primary: "Lora", serif;
+$font-secondary: "Source Sans Pro", sans-serif;
+
+$colours: (
+  primary: #7aa2bc,
+  secondary: #909090,
+  black: #000000,
+  white: #ffffff,
+);
+
+@function getColour($colour) {
+  @return map-get($map: $colours, $key: $colour);
+}
