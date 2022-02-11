@@ -13,10 +13,6 @@ header {
   margin-bottom: 60px;
 }
 
-nav {
-  min-height: 10vh;
-}
-
 nav .logo {
   text-transform: uppercase;
   display: -webkit-box;
@@ -124,5 +120,66 @@ nav .nav-bar span a {
   nav .nav-links .burger-menu {
     display: block;
   }
+}
+
+.hero-banner {
+  margin-top: 60px;
+}
+
+.hero-picture {
+  width: 100%;
+  z-index: 0;
+}
+
+#hero-btn {
+  background-color: #7aa2bc;
+}
+
+.message {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid grey;
+  color: grey;
+}
+
+.message.error {
+  border-color: red;
+  color: white;
+  background: red;
+}
+
+.message.warning {
+  border-color: orange;
+  color: white;
+  background: orange;
+}
+
+.message.success {
+  border-color: green;
+  color: white;
+  background: green;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+form input {
+  width: 100%;
+}
+
+form button {
+  background-color: #506a7d;
+  width: 100%;
+  height: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

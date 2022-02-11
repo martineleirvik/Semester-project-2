@@ -1,5 +1,5 @@
-export function displayMessage(messageType, message, target) {
-	const messageContainer = document.querySelector(target);
+export function displayMessage(messageType, message, targetElement) {
+	const element = document.querySelector(targetElement);
 
-	 messageContainer.innerHTML = `<div class="message ${messageType}">${message}</div>`;
+	 element.innerHTML = `<div class="message ${messageType}">${message}</div>`;
 }
