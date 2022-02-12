@@ -1,10 +1,11 @@
 import { baseUrl } from "./settings/api.js";
 import { createHero } from "./ui/hero.js";
+import loginMenu from "./components/loginMenu.js";
 
 const heroUrl = baseUrl + "home";
 const heroContainer = document.querySelector(".hero-banner");
 
-
+loginMenu();
 
 (async function() {
 
