@@ -10,8 +10,9 @@ export default function loginMenu() {
     let loginLink = `<a href="login.html">Login</a>`;
 
     if (username) {
-        loginLink = `<span>Logged in as ${username}</span>`;
-    }
+        loginLink = `<span class="login-link">Logged in as ${username}</span>
+        <a href="addProducts.html" class="edit-products-link">Edit products</a>
+        `}
 
     container.innerHTML = `<div class="login-btn">
                             ${loginLink}

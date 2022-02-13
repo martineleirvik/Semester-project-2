@@ -14,11 +14,8 @@ loginMenu();
         const json = await response.json();
         console.log(json);
 
-        heroContainer.innerHTML = "";
-
         createHero(json);
 
-        
         
     }
     catch (error) {
