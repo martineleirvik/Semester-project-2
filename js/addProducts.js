@@ -26,7 +26,7 @@ function submitForm(event) {
 
     console.log("priceValue", priceValue);
 
-    if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0){
+    if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0) {
         displayMessage("warning", "Enter valid values", ".message-container");
 
     }
@@ -47,25 +47,26 @@ async function addProducts(title, price, description, image) {
         body: data,
         headers: {
             "Content-type": "application/json",
-            Authorization: `Bearer ${token}`
+             Authorization: `Bearer ${token}`
         },
     };
 
     try {
         const response = await fetch (url, options);
         const json = await response.json();
-        console.log(json);
 
         if (json.created_at) {
             displayMessage("success", "Product added", ".message-container");
             form.reset();
+        }
 
-
+        if (json.error) {
+            displayMessage("error", json.message, ".message-container");
         }
         
     }
     catch(error){
-        console.log(error)
+        displayMessage("error", "An error occured", ".message-container");
     }
 
 }
