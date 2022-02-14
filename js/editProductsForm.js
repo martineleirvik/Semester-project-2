@@ -2,7 +2,7 @@ import { baseUrl } from "./settings/api.js";
 import { getToken } from "./utils/storage.js";
 import { displayMessage } from "./components/displayMessage.js";
 import  loginMenu from "./components/loginMenu.js";
-import { deleteButton } from "./components/products/deleteBtn.js"
+import { deleteButton } from "./components/delete/deleteBtn.js"
 
 loginMenu();
 
