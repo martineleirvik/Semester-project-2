@@ -1,16 +1,51 @@
+import { baseUrl } from "./settings/api.js";
+import { getToken } from "./utils/storage.js";
 import { displayMessage } from "./components/displayMessage.js";
 import  loginMenu from "./components/loginMenu.js";
-import { getToken } from "./utils/storage.js";
-import { baseUrl } from "./settings/api.js";
 
 loginMenu();
 
-const form = document.querySelector("form");
+const queryString = document.location.search;
+const param = new URLSearchParams(queryString);
+const id = param.get("id");
+
+if(!id) {
+    document.location.href = "/";
+}
+
+const productsUrl = baseUrl + "products/" + id;
+
+const form = document.querySelector(".edit-form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image");
+const idInput = document.querySelector("#id");
 const message = document.querySelector(".message-container");
+const loading = document.querySelector(".loading");
+
+(async function() {
+
+    try {
+        const response = await fetch(productsUrl);
+        const details = await response.json();
+
+        title.value = details.title;
+        price.value = details.price;
+        description.value = details.description;
+        image.value = details.image;
+        idInput.value = details.id;
+
+    }
+    catch (error) {
+        console.log(error)
+    }
+    finally {
+        loading.style.display = "none";
+        form.style.display = "block";
+    }
+
+})()
 
 form.addEventListener("submit", submitForm);
 
@@ -23,6 +58,7 @@ function submitForm(event) {
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
     const imageValue = image.value.trim();
+    const idValue = idInput.value;
 
     console.log("priceValue", priceValue);
 
@@ -30,23 +66,23 @@ function submitForm(event) {
         displayMessage("warning", "Enter valid values", ".message-container");
     }
 
-    addProducts(titleValue, priceValue, descriptionValue, imageValue);
+    updateProduct(titleValue, priceValue, descriptionValue, imageValue, idValue);
 
 }
 
-async function addProducts(title, price, description, image) {
-    const url = baseUrl + "products";
+async function updateProduct(title, price, description, image, id) {
 
+    const url = baseUrl + "products/" + id;
     const data = JSON.stringify({title: title, price: price, description: description, image_url: image});
 
     const token = getToken();
 
     const options = {
-        method: "POST",
+        method: "PUT",
         body: data,
         headers: {
             "Content-type": "application/json",
-             Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`
         },
     };
 
@@ -54,18 +90,18 @@ async function addProducts(title, price, description, image) {
         const response = await fetch (url, options);
         const json = await response.json();
 
-        if (json.created_at) {
-            displayMessage("success", "Product added", ".message-container");
-            form.reset();
+        console.log(json);
+
+        if(json.updated_at) {
+            displayMessage("success", "Product updated", ".message-container");
         }
 
-        if (json.error) {
+        if(json.error) {
             displayMessage("error", json.message, ".message-container");
         }
-        
     }
-    catch(error){
-        displayMessage("error", "An error occured", ".message-container");
+    catch(error) {
+        console.log(error);
     }
 
 }

@@ -103,19 +103,25 @@ nav .nav-bar span a {
   margin: 8px 0 0 30px;
 }
 
-.login-container a {
-  color: #000000;
-  text-decoration: none;
+.login-container .login-btn {
   font-family: "Source Sans Pro", sans-serif;
 }
 
-.login-container .login-link {
-  padding-right: 5px;
+.login-container .login-btn a {
+  color: #000000;
+  text-decoration: none;
 }
 
-.login-container .edit-products-link {
+.login-container .login-btn #logout-link {
+  padding: 0 10px;
+  border: none;
+  background-color: #ffffff;
+}
+
+.login-container .login-btn .edit-products-link {
   border-left: 1px solid #909090;
   padding-left: 10px;
+  padding-right: 10px;
 }
 
 @media (max-width: 700px) {
@@ -209,5 +215,18 @@ form button {
   font-weight: bold;
   border: none;
   cursor: pointer;
+}
+
+.edit {
+  border: 1px solid #909090;
+  color: #000000;
+}
+
+.edit h4 {
+  text-decoration: none;
+}
+
+.edit-form {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

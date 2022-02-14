@@ -1,0 +1,13 @@
+.edit {
+  border: 1px solid getColour(secondary);
+  color: getColour(black);
+}
+
+.edit h4 {
+  text-decoration: none;
+}
+
+.edit-form {
+  display: none;
+}
+/*# sourceMappingURL=editProducts.css.map */

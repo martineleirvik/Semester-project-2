@@ -1,0 +1,17 @@
+.edit-products-container {
+  .editproduct {
+  }
+}
+
+.edit {
+  border: 1px solid getColour(secondary);
+  color: getColour(black);
+
+  h4 {
+    text-decoration: none;
+  }
+}
+
+.edit-form {
+  display: none;
+}

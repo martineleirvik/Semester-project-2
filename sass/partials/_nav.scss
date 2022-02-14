@@ -77,19 +77,25 @@ nav {
   font-size: 0.8rem;
   margin: 8px 0 0 30px;
 
-  a {
-    color: getColour(black);
-    text-decoration: none;
+  .login-btn {
     font-family: $font-secondary;
-  }
 
-  .login-link {
-    padding-right: 5px;
-  }
+    a {
+      color: getColour(black);
+      text-decoration: none;
+    }
 
-  .edit-products-link {
-    border-left: 1px solid getColour(secondary);
-    padding-left: 10px;
+    #logout-link {
+      padding: 0 10px;
+      border: none;
+      background-color: getColour(allwhite);
+    }
+
+    .edit-products-link {
+      border-left: 1px solid getColour(secondary);
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 

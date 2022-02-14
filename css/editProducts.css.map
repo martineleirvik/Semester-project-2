@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAKA,AAAA,KAAK,CAAC;EACJ,MAAM,EAAE,GAAG,CAAC,KAAK,CAAC,oBAAoB;EACtC,KAAK,EAAE,gBAAgB;CAKxB;;AAPD,AAIE,KAJG,CAIH,EAAE,CAAC;EACD,eAAe,EAAE,IAAI;CACtB;;AAGH,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;CACd",
+    "sources": [
+        "../sass/pages/editProducts.scss"
+    ],
+    "names": [],
+    "file": "editProducts.css"
+}
