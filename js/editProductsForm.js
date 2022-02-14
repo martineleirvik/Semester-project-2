@@ -2,6 +2,7 @@ import { baseUrl } from "./settings/api.js";
 import { getToken } from "./utils/storage.js";
 import { displayMessage } from "./components/displayMessage.js";
 import  loginMenu from "./components/loginMenu.js";
+import { deleteButton } from "./components/products/deleteBtn.js"
 
 loginMenu();
 
@@ -35,6 +36,8 @@ const loading = document.querySelector(".loading");
         description.value = details.description;
         image.value = details.image;
         idInput.value = details.id;
+
+        deleteButton(details.id);
 
     }
     catch (error) {

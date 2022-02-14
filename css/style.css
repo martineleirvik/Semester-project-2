@@ -229,4 +229,8 @@ form button {
 .edit-form {
   display: none;
 }
+
+.delete {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=style.css.map */
