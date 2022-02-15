@@ -233,4 +233,8 @@ form button {
 .delete {
   margin-top: 20px;
 }
+
+.products-image {
+  max-width: 200px;
+}
 /*# sourceMappingURL=style.css.map */
