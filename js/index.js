@@ -1,8 +1,9 @@
 import { baseUrl } from "./settings/api.js";
 import { createHero } from "./ui/hero.js";
 import loginMenu from "./components/loginMenu.js";
+import { getFeaturedProducts } from "./ui/featuredProducts.js";
 
-const heroUrl = baseUrl + "home";
+const productsUrl = baseUrl + "products";
 const heroContainer = document.querySelector(".hero-banner");
 
 loginMenu();
@@ -10,16 +11,17 @@ loginMenu();
 (async function() {
 
     try {
-        const response = await fetch(heroUrl);
+        const response = await fetch(productsUrl);
         const json = await response.json();
         console.log(json);
 
         createHero(json);
+        getFeaturedProducts(json);
 
         
     }
     catch (error) {
-        console.log(error)
+        console.log(error);
     }
 
 })();

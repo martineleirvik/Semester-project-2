@@ -14,4 +14,14 @@
 .delete {
   margin-top: 20px;
 }
+
+.featured-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
 /*# sourceMappingURL=editProducts.css.map */

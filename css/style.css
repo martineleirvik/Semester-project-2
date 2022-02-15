@@ -234,6 +234,22 @@ form button {
   margin-top: 20px;
 }
 
+.featured-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.featured-btns #featured-yes {
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
 .products-image {
   max-width: 200px;
 }

@@ -12,7 +12,6 @@ const productsUrl = baseUrl + "products";
         console.log(json);
 
         renderProducts(json);
-
         
     }
     catch (error) {
