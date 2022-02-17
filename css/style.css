@@ -161,6 +161,7 @@ footer {
   background-color: #909090;
   text-align: center;
   color: #ffffff;
+  margin-top: 100px;
 }
 
 form {
@@ -325,6 +326,44 @@ form button {
   .container {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.product-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.product-wrapper img {
+  max-width: 100%;
+}
+
+.product-wrapper .text-wrapper {
+  text-align: center;
+}
+
+.product-wrapper button {
+  background-color: #506a7d;
+  padding: 20px 60px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.product-wrapper button:hover {
+  opacity: 0.7;
+}
+
+@media (min-width: 1024px) {
+  .product-wrapper {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 /*# sourceMappingURL=style.css.map */
