@@ -13,7 +13,6 @@ export function renderProducts(render) {
                                             <h3>${product.title}</h3>
                                             <h4>$${product.price}</h4>
                                             </div>
-                                            
                                         </a>`;
     });
 

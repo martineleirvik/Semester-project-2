@@ -156,6 +156,13 @@ nav .nav-bar span a {
   }
 }
 
+footer {
+  width: 100%;
+  background-color: #909090;
+  text-align: center;
+  color: #ffffff;
+}
+
 form {
   max-width: 400px;
   margin: 0 auto;
