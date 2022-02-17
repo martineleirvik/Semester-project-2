@@ -1,5 +1,6 @@
 import { baseUrl } from "./settings/api.js";
 import { renderProducts } from "./ui/renderProducts.js";
+import { searchProducts } from "./ui/searchProducts.js";
 
 const productsUrl = baseUrl + "products";
 
@@ -12,6 +13,7 @@ const productsUrl = baseUrl + "products";
         console.log(json);
 
         renderProducts(json);
+        searchProducts(json);
         
     }
     catch (error) {

@@ -255,11 +255,15 @@ form button {
 .container .card {
   text-align: center;
   text-decoration: none;
+  border: none;
+  margin: 15px 0;
 }
 
 .container .product-image {
   width: 100%;
   height: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container .product-info {
@@ -287,11 +291,26 @@ form button {
   opacity: 0.7;
 }
 
+.search {
+  float: right;
+  margin-right: 30px;
+}
+
+#noSearchValue {
+  margin: 30px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 @media (min-width: 700px) {
   .container {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+  }
+  .search {
+    margin-right: 50px;
   }
 }
 
