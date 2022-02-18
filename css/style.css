@@ -344,7 +344,15 @@ form button {
   text-align: center;
 }
 
-.product-wrapper button {
+.product-wrapper .text-wrapper #description {
+  font-weight: bold;
+}
+
+.product-wrapper .text-wrapper #price {
+  font-size: 1.5rem;
+}
+
+.product-wrapper .text-wrapper button {
   background-color: #506a7d;
   padding: 20px 60px;
   color: #ffffff;
@@ -364,6 +372,19 @@ form button {
   .product-wrapper {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+  }
+  .product-wrapper img {
+    max-width: 90%;
+  }
+  .product-wrapper .text-wrapper {
+    text-align: left;
+    margin-top: 20px;
+  }
+  .product-wrapper .text-wrapper h2 {
+    text-align: left;
+  }
+  .product-wrapper .text-wrapper button {
+    margin: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

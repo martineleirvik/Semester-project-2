@@ -8,18 +8,26 @@
 
   .text-wrapper {
     text-align: center;
-  }
 
-  button {
-    background-color: getColour(darkblue);
-    padding: 20px 60px;
-    color: getColour(allwhite);
-    font-weight: bold;
-    font-size: 1.4rem;
-    border: none;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
+    #description {
+      font-weight: bold;
+    }
+
+    #price {
+      font-size: 1.5rem;
+    }
+
+    button {
+      background-color: getColour(darkblue);
+      padding: 20px 60px;
+      color: getColour(allwhite);
+      font-weight: bold;
+      font-size: 1.4rem;
+      border: none;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   button:hover {
@@ -30,5 +38,22 @@
 @media (min-width: 1024px) {
   .product-wrapper {
     grid-template-columns: 1fr 1fr;
+
+    img {
+      max-width: 90%;
+    }
+
+    .text-wrapper {
+      text-align: left;
+      margin-top: 20px;
+
+      h2 {
+        text-align: left;
+      }
+
+      button {
+        margin: 0;
+      }
+    }
   }
 }

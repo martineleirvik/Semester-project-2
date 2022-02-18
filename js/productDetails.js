@@ -23,8 +23,8 @@ const detailsUrl = baseUrl + "products/" + id;
                                     </div>
                                     <div class="text-wrapper">
                                         <h2>${details.title}</h2>
-                                        <p>$${details.price}</p>
-                                        <p>Product description</p>
+                                        <p id="price">$${details.price}</p>
+                                        <p id="description">Product description</p>
                                         <p>${details.description}</p>
                                         <button id="addBtn">Add to Cart</button>
                                     </div>
