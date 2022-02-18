@@ -17,7 +17,6 @@ const detailsUrl = baseUrl + "products/" + id;
 (async function () {
     const response = await fetch(detailsUrl);
     const details = await response.json();
-    console.log(details);
 
     detailsContainer.innerHTML = "";
 
@@ -30,7 +29,7 @@ const detailsUrl = baseUrl + "products/" + id;
                                         <p id="price">$${details.price}</p>
                                         <p id="description">Product description</p>
                                         <p>${details.description}</p>
-                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title}">Add to Cart</button>
+                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title} data-price="${details.price}">Add to Cart</button>
                                     </div>
                                 </div>`;
 
@@ -46,9 +45,8 @@ addButton.forEach((button) => {
 function addToCart(event) {
     const addButton = document.querySelectorAll(".text-wrapper button");
 
-    const id = this.dataset.id;
-    const title = this.dataset.title;
-
+    const {id, title, price} = this.dataset;
+   
     const currentProducts = getFromStorage("products");
 
     const productExsists = currentProducts.find(function(item) {
@@ -56,7 +54,7 @@ function addToCart(event) {
     });
 
     if(!productExsists) {
-        const product = { id: id, title: title}
+        const product = { id: id, title: title, price: price};
         currentProducts.push(product);
         saveToStorage(currentProducts);
     }

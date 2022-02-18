@@ -28,18 +28,6 @@
       display: block;
       margin: 0 auto;
     }
-
-    button.addedBtn {
-      background-color: getColour(secondary);
-      padding: 20px 60px;
-      color: getColour(allwhite);
-      font-weight: bold;
-      font-size: 1.4rem;
-      border: none;
-      cursor: pointer;
-      display: block;
-      margin: 0 auto;
-    }
   }
 
   button:hover {
