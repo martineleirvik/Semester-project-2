@@ -1,4 +1,6 @@
 import { baseUrl } from "./settings/api.js"
+import { getFromStorage } from "./utils/storage.js";
+import { saveToStorage } from "./utils/storage.js";
 
 const detailsContainer = document.querySelector(".details");
 
@@ -17,6 +19,8 @@ const detailsUrl = baseUrl + "products/" + id;
     const details = await response.json();
     console.log(details);
 
+    detailsContainer.innerHTML = "";
+
     detailsContainer.innerHTML = `<div class="product-wrapper">
                                     <div class="image-wrapper"> 
                                         <img class="product-detail-image" src="http://localhost:1337${details.image.formats.medium.url}" alt="${details.image.alternativeText}">
@@ -26,12 +30,11 @@ const detailsUrl = baseUrl + "products/" + id;
                                         <p id="price">$${details.price}</p>
                                         <p id="description">Product description</p>
                                         <p>${details.description}</p>
-                                        <button id="addBtn">Add to Cart</button>
+                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title}">Add to Cart</button>
                                     </div>
                                 </div>`;
 
 
-})();
 
 const addButton = document.querySelectorAll(".text-wrapper button");
 
@@ -41,6 +44,28 @@ addButton.forEach((button) => {
 });
 
 function addToCart(event) {
-    console.log(event);
+    const addButton = document.querySelectorAll(".text-wrapper button");
+
+    const id = this.dataset.id;
+    const title = this.dataset.title;
+
+    const currentProducts = getFromStorage("products");
+
+    const productExsists = currentProducts.find(function(item) {
+        return item.id === id;
+    });
+
+    if(!productExsists) {
+        const product = { id: id, title: title}
+        currentProducts.push(product);
+        saveToStorage(currentProducts);
+    }
 }
+
+function saveToStorage(prod) {
+    localStorage.setItem("products", JSON.stringify(prod));
+}
+
+})();
+
 

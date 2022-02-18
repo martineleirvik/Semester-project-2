@@ -352,8 +352,20 @@ form button {
   font-size: 1.5rem;
 }
 
-.product-wrapper .text-wrapper button {
+.product-wrapper .text-wrapper button.addBtn {
   background-color: #506a7d;
+  padding: 20px 60px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.product-wrapper .text-wrapper button.addedBtn {
+  background-color: #909090;
   padding: 20px 60px;
   color: #ffffff;
   font-weight: bold;
@@ -383,7 +395,7 @@ form button {
   .product-wrapper .text-wrapper h2 {
     text-align: left;
   }
-  .product-wrapper .text-wrapper button {
+  .product-wrapper .text-wrapper button#addBtn {
     margin: 0;
   }
 }
