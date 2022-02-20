@@ -4,7 +4,7 @@ import loginMenu from "./components/loginMenu.js";
 import { getFeaturedProducts } from "./ui/featuredProducts.js";
 
 const productsUrl = baseUrl + "products";
-const featuredUrl = baseUrl + "products?featured=true"
+const featuredUrl = baseUrl + "products?featured=true";
 const heroContainer = document.querySelector(".hero-banner");
 
 loginMenu();

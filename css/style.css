@@ -387,4 +387,14 @@ form button {
     margin: 0;
   }
 }
+
+.cart-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cart-card .cart-image {
+  max-width: 50%;
+}
 /*# sourceMappingURL=style.css.map */

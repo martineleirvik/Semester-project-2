@@ -29,7 +29,7 @@ const detailsUrl = baseUrl + "products/" + id;
                                         <p id="price">$${details.price}</p>
                                         <p id="description">Product description</p>
                                         <p>${details.description}</p>
-                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title} data-price="${details.price}">Add to Cart</button>
+                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="http://localhost:1337${details.image.formats.medium.url}" data-alt="${details.image.alternativeText}">Add to Cart</button>
                                     </div>
                                 </div>`;
 
@@ -45,7 +45,9 @@ addButton.forEach((button) => {
 function addToCart(event) {
     const addButton = document.querySelectorAll(".text-wrapper button");
 
-    const {id, title, price} = this.dataset;
+    const {id, title, price, image, alt} = this.dataset;
+
+    console.log("alt", alt);
    
     const currentProducts = getFromStorage("products");
 
@@ -54,7 +56,7 @@ function addToCart(event) {
     });
 
     if(!productExsists) {
-        const product = { id: id, title: title, price: price};
+        const product = { id: id, title: title, price: price, image: image, alt: alt};
         currentProducts.push(product);
         saveToStorage(currentProducts);
     }
