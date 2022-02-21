@@ -28,6 +28,21 @@ products.forEach((product) => {
 
 
 const removeCartProductBtn = document.querySelectorAll(".btn-remove");
+console.log(removeCartProductBtn);
+for (var i = 0; i < removeCartProductBtn.length; i++) {
+    var button = removeCartProductBtn[i]
+    button.addEventListener("click", removeProduct)
+}
+
+function removeProduct (event) {
+    var buttonisClicked = event.target
+    console.log(buttonisClicked);
+    localStorage.removeItem("products");
+
+    window.location.reload();
+
+}
+
 
 const total = document.querySelector(".cart-total");
 const parseData = JSON.parse(localStorage.getItem("products"));
@@ -36,12 +51,14 @@ let cartTotal = 0;
 console.log(parseData);
 
 parseData.map(data => {
-    for(var i = 0; i < data.price.length; i++)
-    {
+    for(var i = 0; i < data.price.length; i++) {
         cartTotal += parseFloat(data.price[i]);
-    }
+    };
 
 });
 
         
  total.innerHTML += `<p class="amount">Total: <strong>${cartTotal}</strong></p>`;
+
+ const inputQuantity = document.querySelector(".cart-quantity-input").value;
+ console.log(inputQuantity);

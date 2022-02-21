@@ -388,35 +388,39 @@ form button {
   }
 }
 
-.cart-card {
+.cart-container {
+  margin: 10px 30px;
+}
+
+.cart-container .cart-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.cart-card .cart-product {
+.cart-container .cart-card .cart-product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.cart-card .cart-product .cart-image {
+.cart-container .cart-card .cart-product .cart-image {
   width: 150px;
   height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.cart-card .cart-view {
+.cart-container .cart-card .cart-view {
   color: #000000;
 }
 
-.cart-card .cart-quantity input {
+.cart-container .cart-card .cart-quantity input {
   max-width: 35px;
   border: 1px solid #909090;
 }
 
-.cart-card .cart-quantity button {
+.cart-container .cart-card .cart-quantity button {
   border: none;
   background-color: #506a7d;
   color: #ffffff;
