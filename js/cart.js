@@ -1,11 +1,11 @@
 import { getFromStorage } from "./utils/storage.js";
-import { clearKeyStorage } from "./utils/storage.js";
 
 const products = getFromStorage("products");
 const cartContainer = document.querySelector(".cart-container");
+const noProd = document.querySelector(".no-products");
 
 if(products.length === 0) {
-    cartContainer.innerHTML = "No products in the cart.";
+    noProd.innerHTML = "No products in the cart.";
 }
 
 products.forEach((product) => {
@@ -48,11 +48,24 @@ let cartTotal = 0;
 
 console.log(parseData);
 
-parseData.map(data => {
-    for(var i = 0; i < data.price.length; i++) {
-        cartTotal += parseFloat(data.price[i]);
-    };
-
+parseData.map(data => { 
+        cartTotal += parseFloat(data.price);
 });
         
- total.innerHTML += `<p class="amount">Total: <strong>${cartTotal}</strong></p>`;
+ total.innerHTML += `<p class="amount">Total: <strong>$${cartTotal}</strong></p>`;
+
+
+
+ const purchaseBtn = document.querySelector(".cart-purchase")
+
+ purchaseBtn.addEventListener("click", clearChartStorage);
+
+ function clearChartStorage () {
+
+    const purchase = confirm("Do you want to purchase the products?");
+
+            if(purchase) {
+                localStorage.removeItem("products");
+                window.location.reload();
+            }
+ }

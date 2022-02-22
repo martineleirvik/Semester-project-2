@@ -1,10 +1,13 @@
 .hero-banner {
   margin-top: 60px;
-}
-.hero-picture img {
-  max-width: 100%;
-}
 
-#hero-btn {
-  background-color: getColour(primary);
+  .hero {
+    img {
+      max-width: 100%;
+    }
+
+    #hero-btn {
+      background-color: getColour(primary);
+    }
+  }
 }

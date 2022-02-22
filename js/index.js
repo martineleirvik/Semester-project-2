@@ -3,7 +3,7 @@ import { createHero } from "./ui/hero.js";
 import loginMenu from "./components/loginMenu.js";
 import { getFeaturedProducts } from "./ui/featuredProducts.js";
 
-const productsUrl = baseUrl + "products";
+const homeUrl = baseUrl + "home";
 const featuredUrl = baseUrl + "products?featured=true";
 const heroContainer = document.querySelector(".hero-banner");
 
@@ -12,7 +12,7 @@ loginMenu();
 (async function() {
 
     try {
-        const response = await fetch(productsUrl);
+        const response = await fetch(homeUrl);
         const json = await response.json();
         console.log(json);
 
