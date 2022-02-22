@@ -39,7 +39,7 @@ function removeProduct (event) {
     console.log(buttonisClicked);
     localStorage.removeItem("products");
 
-    window.location.reload();
+    
 
 }
 

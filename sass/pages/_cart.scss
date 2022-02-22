@@ -1,24 +1,37 @@
 .cart-container {
-  margin: 10px 30px;
-
   .cart-card {
-    display: flex;
+    margin: 30px 20px;
+    display: grid;
+    grid-template-areas:
+      "Product Price"
+      "Product View"
+      "Product Quantity";
 
     .cart-product {
       display: flex;
+      flex-direction: column-reverse;
+      grid-area: Product;
 
       .cart-image {
-        width: 150px;
-        height: 100px;
+        width: 70%;
+        height: 70%;
         object-fit: cover;
       }
     }
 
+    .cart-price {
+      grid-area: Price;
+      margin-top: 30px;
+    }
+
     .cart-view {
       color: getColour(black);
+      grid-area: View;
     }
 
     .cart-quantity {
+      grid-area: Quantity;
+
       input {
         max-width: 35px;
         border: 1px solid getColour(secondary);
@@ -35,6 +48,7 @@
 
 .cart-total-purchase {
   text-align: right;
+  margin-right: 30px;
 
   .cart-total {
     font-size: 1.4rem;
@@ -51,37 +65,41 @@
 }
 
 @media (min-width: 700px) {
-  .cart-card {
-    margin: 30px 50px;
-    text-align: center;
+  .cart-container {
+    .cart-card {
+      display: flex;
+      margin: 30px 50px;
+      text-align: center;
 
-    .cart-product {
-      width: 50%;
+      .cart-product {
+        flex-direction: row;
+        width: 50%;
 
-      h3 {
-        font-size: 1.2rem;
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        .cart-image {
+          width: 150px;
+          height: 100px;
+          margin-right: 20px;
+        }
       }
 
-      .cart-image {
-        width: 150px;
-        height: 100px;
-        margin-right: 20px;
+      .cart-price {
+        width: 10%;
+        margin-top: 0;
       }
-    }
 
-    .cart-price {
-      width: 10%;
-    }
+      .cart-view {
+        width: 18%;
+      }
 
-    .cart-view {
-      width: 20%;
-    }
-
-    .cart-quantity {
-      width: 20%;
+      .cart-quantity {
+        width: 22%;
+      }
     }
   }
-
   .cart-total-purchase {
     margin-right: 50px;
   }

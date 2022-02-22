@@ -388,31 +388,52 @@ form button {
   }
 }
 
-.cart-container {
-  margin: 10px 30px;
-}
-
 .cart-container .cart-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 30px 20px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "Product Price" "Product View" "Product Quantity";
 }
 
 .cart-container .cart-card .cart-product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: Product;
 }
 
 .cart-container .cart-card .cart-product .cart-image {
-  width: 150px;
-  height: 100px;
+  width: 70%;
+  height: 70%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+.cart-container .cart-card .cart-price {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: Price;
+  margin-top: 30px;
+}
+
 .cart-container .cart-card .cart-view {
   color: #000000;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: View;
+}
+
+.cart-container .cart-card .cart-quantity {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: Quantity;
 }
 
 .cart-container .cart-card .cart-quantity input {
@@ -429,6 +450,7 @@ form button {
 
 .cart-total-purchase {
   text-align: right;
+  margin-right: 30px;
 }
 
 .cart-total-purchase .cart-total {
@@ -445,29 +467,37 @@ form button {
 }
 
 @media (min-width: 700px) {
-  .cart-card {
+  .cart-container .cart-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin: 30px 50px;
     text-align: center;
   }
-  .cart-card .cart-product {
+  .cart-container .cart-card .cart-product {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     width: 50%;
   }
-  .cart-card .cart-product h3 {
+  .cart-container .cart-card .cart-product h3 {
     font-size: 1.2rem;
   }
-  .cart-card .cart-product .cart-image {
+  .cart-container .cart-card .cart-product .cart-image {
     width: 150px;
     height: 100px;
     margin-right: 20px;
   }
-  .cart-card .cart-price {
+  .cart-container .cart-card .cart-price {
     width: 10%;
+    margin-top: 0;
   }
-  .cart-card .cart-view {
-    width: 20%;
+  .cart-container .cart-card .cart-view {
+    width: 18%;
   }
-  .cart-card .cart-quantity {
-    width: 20%;
+  .cart-container .cart-card .cart-quantity {
+    width: 22%;
   }
   .cart-total-purchase {
     margin-right: 50px;
