@@ -27,26 +27,10 @@ products.forEach((product) => {
 });
 
 
-const removeCartProductBtn = document.querySelectorAll(".btn-remove");
-console.log(removeCartProductBtn);
-for (var i = 0; i < removeCartProductBtn.length; i++) {
-    var button = removeCartProductBtn[i]
-    button.addEventListener("click", removeProduct)
-}
-
-function removeProduct (event) {
-    var buttonisClicked = event.target
-    console.log(buttonisClicked);
-    localStorage.removeItem("products");
-    window.location.reload();
-}
-
 
 const total = document.querySelector(".cart-total");
 const parseData = JSON.parse(localStorage.getItem("products"));
 let cartTotal = 0;
-
-console.log(parseData);
 
 parseData.map(data => { 
         cartTotal += parseFloat(data.price);
@@ -69,3 +53,23 @@ parseData.map(data => {
                 window.location.reload();
             }
  }
+
+
+ const inputQuantity = document.querySelector(".cart-quantity-input").value;
+ console.log(inputQuantity);
+
+
+
+ const removeCartProductBtn = document.querySelectorAll(".btn-remove");
+    console.log(removeCartProductBtn);
+    for (var i = 0; i < removeCartProductBtn.length; i++) {
+    var button = removeCartProductBtn[i]
+    button.addEventListener("click", removeProduct)
+}
+
+function removeProduct (event) {
+    var buttonisClicked = event.target
+    console.log(buttonisClicked);
+    localStorage.removeItem("products");
+    window.location.reload();
+}

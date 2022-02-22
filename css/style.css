@@ -301,6 +301,7 @@ form button {
 .search {
   float: right;
   margin-right: 30px;
+  margin-bottom: 50px;
 }
 
 #noSearchValue {
@@ -333,10 +334,13 @@ form button {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  margin: 30px;
 }
 
-.product-wrapper img {
-  max-width: 100%;
+.product-wrapper .image-wrapper img {
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
 }
 
 .product-wrapper .text-wrapper {
@@ -345,6 +349,11 @@ form button {
 
 .product-wrapper .text-wrapper #description {
   font-weight: bold;
+}
+
+.product-wrapper .text-wrapper #description-text {
+  margin: 0 auto 20px auto;
+  max-width: 500px;
 }
 
 .product-wrapper .text-wrapper #price {
@@ -369,18 +378,28 @@ form button {
 
 @media (min-width: 1024px) {
   .product-wrapper {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
-  .product-wrapper img {
-    max-width: 90%;
+  .product-wrapper .image-wrapper {
+    margin: 0 40px;
+  }
+  .product-wrapper .image-wrapper img {
+    width: 400px;
+    height: 450px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .product-wrapper .text-wrapper {
     text-align: left;
-    margin-top: 20px;
+    margin: 20px 50px 0 0;
   }
   .product-wrapper .text-wrapper h2 {
     text-align: left;
+  }
+  .product-wrapper .text-wrapper #description-text {
+    max-width: 500px;
+    margin: 0 0 30px 0;
   }
   .product-wrapper .text-wrapper button#addBtn {
     margin: 0;

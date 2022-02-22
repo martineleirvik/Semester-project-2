@@ -1,6 +1,7 @@
 import { baseUrl } from "./settings/api.js"
 import { getFromStorage } from "./utils/storage.js";
-import { saveToStorage } from "./utils/storage.js";
+import loginMenu from "./components/loginMenu.js";
+
 
 const detailsContainer = document.querySelector(".details");
 
@@ -27,8 +28,8 @@ const detailsUrl = baseUrl + "products/" + id;
                                     <div class="text-wrapper">
                                         <h2>${details.title}</h2>
                                         <p id="price">$${details.price}</p>
-                                        <p id="description">Product description</p>
-                                        <p>${details.description}</p>
+                                        <p id="description">Product description:</p>
+                                        <p id="description-text">${details.description}</p>
                                         <button class="addBtn" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="http://localhost:1337${details.image.formats.medium.url}" data-alt="${details.image.alternativeText}">Add to Cart</button>
                                     </div>
                                 </div>`;
@@ -36,6 +37,7 @@ const detailsUrl = baseUrl + "products/" + id;
 
 
 const addButton = document.querySelectorAll(".text-wrapper button");
+console.log(addButton);
 
 addButton.forEach((button) => {
     button.addEventListener("click", addToCart);
@@ -43,11 +45,18 @@ addButton.forEach((button) => {
 });
 
 function addToCart(event) {
-    const addButton = document.querySelectorAll(".text-wrapper button");
+    console.log(event);
+
+    if(this.innerHTML === "Add to Cart"){
+        this.innerHTML = "Added to Cart";
+    }
+    else {
+        this.innerHTML = "Add to Cart";
+    }
 
     const {id, title, price, image, alt} = this.dataset;
 
-    console.log("alt", alt);
+    console.log("id", id);
    
     const currentProducts = getFromStorage("products");
 
@@ -60,6 +69,10 @@ function addToCart(event) {
         currentProducts.push(product);
         saveToStorage(currentProducts);
     }
+    else {
+        const newProducts = currentProducts.filter((newest) => newest.id !== id);
+        saveToStorage(newProducts);
+    }
 }
 
 function saveToStorage(prod) {
@@ -68,4 +81,6 @@ function saveToStorage(prod) {
 
 })();
 
-
+if(localStorage.getItem("products", id) === null) {
+    addButton.innerHTML = "Add to Cart"
+}

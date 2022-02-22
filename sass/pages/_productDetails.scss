@@ -1,9 +1,14 @@
 .product-wrapper {
   display: grid;
   grid-template-columns: 1fr;
+  margin: 30px;
 
-  img {
-    max-width: 100%;
+  .image-wrapper {
+    img {
+      max-width: 80%;
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   .text-wrapper {
@@ -11,6 +16,11 @@
 
     #description {
       font-weight: bold;
+    }
+
+    #description-text {
+      margin: 0 auto 20px auto;
+      max-width: 500px;
     }
 
     #price {
@@ -37,18 +47,29 @@
 
 @media (min-width: 1024px) {
   .product-wrapper {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
 
-    img {
-      max-width: 90%;
+    .image-wrapper {
+      margin: 0 40px;
+
+      img {
+        width: 400px;
+        height: 450px;
+        object-fit: cover;
+      }
     }
 
     .text-wrapper {
       text-align: left;
-      margin-top: 20px;
+      margin: 20px 50px 0 0;
 
       h2 {
         text-align: left;
+      }
+
+      #description-text {
+        max-width: 500px;
+        margin: 0 0 30px 0;
       }
 
       button#addBtn {
