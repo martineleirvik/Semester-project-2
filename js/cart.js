@@ -54,9 +54,5 @@ parseData.map(data => {
     };
 
 });
-
         
  total.innerHTML += `<p class="amount">Total: <strong>${cartTotal}</strong></p>`;
-
- const inputQuantity = document.querySelector(".cart-quantity-input").value;
- console.log(inputQuantity);
