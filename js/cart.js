@@ -38,9 +38,7 @@ function removeProduct (event) {
     var buttonisClicked = event.target
     console.log(buttonisClicked);
     localStorage.removeItem("products");
-
-    
-
+    window.location.reload();
 }
 
 

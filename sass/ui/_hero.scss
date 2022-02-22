@@ -1,9 +1,8 @@
 .hero-banner {
   margin-top: 60px;
 }
-.hero-picture {
-  width: 100%;
-  z-index: 0;
+.hero-picture img {
+  max-width: 100%;
 }
 
 #hero-btn {

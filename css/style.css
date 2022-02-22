@@ -216,9 +216,8 @@ form button {
   margin-top: 60px;
 }
 
-.hero-picture {
-  width: 100%;
-  z-index: 0;
+.hero-picture img {
+  max-width: 100%;
 }
 
 #hero-btn {
@@ -389,10 +388,12 @@ form button {
 }
 
 .cart-container .cart-card {
-  margin: 30px 20px;
+  margin: 0 20px;
+  padding: 30px 0;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "Product Price" "Product View" "Product Quantity";
+  border-bottom: 1px solid #909090;
 }
 
 .cart-container .cart-card .cart-product {
@@ -410,8 +411,8 @@ form button {
 }
 
 .cart-container .cart-card .cart-product .cart-image {
-  width: 70%;
-  height: 70%;
+  width: 150px;
+  height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -420,7 +421,6 @@ form button {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: Price;
-  margin-top: 30px;
 }
 
 .cart-container .cart-card .cart-view {
@@ -446,6 +446,10 @@ form button {
   background-color: #506a7d;
   color: #ffffff;
   padding: 2px 10px;
+}
+
+.cart-container .cart-card:first-child {
+  border-top: 1px solid #909090;
 }
 
 .cart-total-purchase {
