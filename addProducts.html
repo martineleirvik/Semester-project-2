@@ -41,7 +41,7 @@
 
     <h2>Add products</h2>
 
-    <form>
+    <form action="http://localhost:1337/upload" method="POST">
         <div class="message-container"></div>
         <div>
             <label for="Title">Title</label>
@@ -59,6 +59,10 @@
             <label for="image">Image-url</label>
             <input id="image">
         </div>
+        <div>
+          <label for="featured">Featured product?</label>
+          <input id="featured" type="checkbox">
+      </div>
        <button>Add product</button> 
     </form>
 

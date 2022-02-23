@@ -81,9 +81,16 @@ function saveToStorage(prod) {
 
 })();
 
+/// check if product is in LS and then adding the proper innerHTML for the button
+
 function checkIfInStorage() {
-    if(localStorage.getItem("products", id) ) {
-        addButton.innerHTML = "Add to Cart"
+    const inStorage = localStorage.getItem("products");
+
+    if(!inStorage) {
+        return []
     }
+    return JSON.parse(inStorage);
 }
 
+const currentStorage = checkIfInStorage();
+console.log(currentStorage);

@@ -64,12 +64,38 @@ parseData.map(data => {
     console.log(removeCartProductBtn);
     for (var i = 0; i < removeCartProductBtn.length; i++) {
     var button = removeCartProductBtn[i]
-    button.addEventListener("click", removeProduct)
+    button.addEventListener("click", handleRemovingProduct)
 }
 
-function removeProduct (event) {
-    var buttonisClicked = event.target
-    console.log(buttonisClicked);
-    localStorage.removeItem("products");
-    window.location.reload();
+function getProductFromStorage () {
+    const removeFromStorage = localStorage.getItem("products");
+
+    if(!removeFromStorage) {
+        return []
+    }
+    return JSON.parse(removeFromStorage);
+}
+const currentStorage = getProductFromStorage();
+console.log(currentStorage);
+
+
+function handleRemovingProduct() {
+    const id = this.dataset.id;
+    console.log("id", id);
+
+    const currentProd = getProductFromStorage();
+
+    const productIsInStorage = currentProd.find(function(find) {
+        return find.id === id;
+    });
+
+    if(productIsInStorage) {
+        const newCartProducts = currentProd.filter( find => find.id !== id)
+        saveProduct(newCartProducts);
+        window.location.reload();
+    }
+}
+
+function saveProduct(prod) {
+    localStorage.setItem("products", JSON.stringify(prod));
 }
