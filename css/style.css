@@ -532,7 +532,7 @@ form button {
 }
 
 .featured-container {
-  width: 90%;
+  width: 98%;
   height: 400px;
   overflow: hidden;
   position: relative;
@@ -570,5 +570,22 @@ form button {
 
 .featured-container .featured-slide::-webkit-scrollbar {
   visibility: hidden;
+}
+
+.featured-container .pointer {
+  cursor: pointer;
+  z-index: 1;
+  font-size: 1.8rem;
+}
+
+.featured-container .pointer .right-point {
+  left: 98%;
+  float: right;
+  margin: 0 10px;
+}
+
+.featured-container .pointer .left-point {
+  float: left;
+  margin: 0 10px;
 }
 /*# sourceMappingURL=style.css.map */

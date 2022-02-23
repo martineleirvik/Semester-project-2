@@ -1,5 +1,5 @@
 .featured-container {
-  width: 90%;
+  width: 98%;
   height: 400px;
   overflow: hidden;
   position: relative;
@@ -34,7 +34,28 @@
   .featured-slide::-webkit-scrollbar {
     visibility: hidden;
   }
+
+  .pointer {
+    cursor: pointer;
+    z-index: 1;
+    font-size: 1.8rem;
+
+    .right-point {
+      left: 98%;
+      float: right;
+      margin: 0 10px;
+    }
+
+    .left-point {
+      float: left;
+      margin: 0 10px;
+    }
+  }
 }
 
 @media (min-width: 700px) {
+  .featured-container {
+    .featured-slide {
+    }
+  }
 }
