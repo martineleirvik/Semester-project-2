@@ -81,6 +81,9 @@ function saveToStorage(prod) {
 
 })();
 
-if(localStorage.getItem("products", id) === null) {
-    addButton.innerHTML = "Add to Cart"
+function checkIfInStorage() {
+    if(localStorage.getItem("products", id) ) {
+        addButton.innerHTML = "Add to Cart"
+    }
 }
+
