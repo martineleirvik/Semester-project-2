@@ -92,7 +92,7 @@ function checkIfInStorage() {
 
     console.log(productExsist);
 
-    if(productExsist.id === id) {
+    if(productExsist === id) {
         addButton.innerHTML = "Added to Cart"
     }
     else {
