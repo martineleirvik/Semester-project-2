@@ -77,7 +77,7 @@ function submitForm(event) {
     const idValue = idInput.value;
     const featuredValue = featured.checked;
 
-    console.log("priceValue", featuredNo);
+    console.log("priceValue", featured);
 
     if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0) {
         displayMessage("warning", "Enter valid values", ".message-container");
