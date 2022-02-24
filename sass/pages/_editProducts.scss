@@ -1,15 +1,10 @@
-.edit-products-container {
-  .editproduct {
-  }
+.editcard {
+  border-bottom: 1px solid getColour(secondary);
+  margin: 10px;
 }
 
-.edit {
-  border: 1px solid getColour(secondary);
-  color: getColour(black);
-
-  h4 {
-    text-decoration: none;
-  }
+h4 {
+  text-decoration: none;
 }
 
 .edit-form {

@@ -224,12 +224,12 @@ form button {
   background-color: #7aa2bc;
 }
 
-.edit {
-  border: 1px solid #909090;
-  color: #000000;
+.editcard {
+  border-bottom: 1px solid #909090;
+  margin: 10px;
 }
 
-.edit h4 {
+h4 {
   text-decoration: none;
 }
 

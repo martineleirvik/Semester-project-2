@@ -1,5 +1,4 @@
 import { baseUrl } from "./settings/api.js";
-import { createHero } from "./ui/hero.js";
 import loginMenu from "./components/loginMenu.js";
 import { editRenderProducts } from "./ui/editRenderProducts.js";
 

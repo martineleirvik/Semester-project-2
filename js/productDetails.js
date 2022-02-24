@@ -55,8 +55,6 @@ function addToCart(event) {
     }
 
     const {id, title, price, image, alt} = this.dataset;
-
-    console.log("id", id);
    
     const currentProducts = getFromStorage("products");
 
@@ -84,13 +82,22 @@ function saveToStorage(prod) {
 /// check if product is in LS and then adding the proper innerHTML for the button
 
 function checkIfInStorage() {
-    const inStorage = localStorage.getItem("products");
 
-    if(!inStorage) {
-        return []
+    const addButton = document.querySelectorAll(".text-wrapper button");
+    const currentProducts = getFromStorage("products");
+
+    const productExsist = currentProducts.find(function(item) {
+        return item.id === id;
+    });
+
+    console.log(productExsist);
+
+    if(productExsist.id === id) {
+        addButton.innerHTML = "Added to Cart"
     }
-    return JSON.parse(inStorage);
+    else {
+        addButton.innerHTML = "Add to Cart"        
+    }
 }
 
-const currentStorage = checkIfInStorage();
-console.log(currentStorage);
+checkIfInStorage();
