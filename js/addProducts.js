@@ -11,8 +11,7 @@ const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image");
 const message = document.querySelector(".message-container");
-const featured = document.querySelector("#featured").checked;
-console.log(featured);
+const featured = document.querySelector("#featured");
 
 form.addEventListener("submit", submitForm);
 
@@ -25,23 +24,15 @@ function submitForm(event) {
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
     const imageValue = image.value.trim();
-    const featuredValue = isFeatured();
+    const featuredValue = featured.checked;
 
-    console.log("priceValue", featured);
+    console.log("featured", featured);
 
     if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0) {
         displayMessage("warning", "Enter valid values", ".message-container");
     }
 
     addProducts(titleValue, priceValue, descriptionValue, featuredValue, imageValue);
-}
-
-function isFeatured() {
-    if(featured === true) {
-        return true;
-    } else {
-        return false;
-    }
 }
 
 async function addProducts(title, price, description, featured, image) {

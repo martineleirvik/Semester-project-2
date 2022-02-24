@@ -16,18 +16,17 @@ if(!id) {
 
 
 const productsUrl = baseUrl + "products/" + id;
+const Url = "http://localhost:1337";
 
 const form = document.querySelector(".edit-form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image");
-const featuredYes = document.querySelector("#featured-yes");
-const featuredNo = document.querySelector("#featured-no");
 const idInput = document.querySelector("#id");
 const message = document.querySelector(".message-container");
 const loading = document.querySelector(".loading");
-
+const featured = document.querySelector("#editfeatured");
 
 (async function() {
 
@@ -36,16 +35,20 @@ const loading = document.querySelector(".loading");
         const details = await response.json();
         console.log(details);
 
+        let imageCheck = "";
+        if (details.image) {
+            imageCheck = Url + details.image.url;
+        }
+        if (details.image_url) {
+            imageCheck = details.image_url;
+        }
+
         title.value = details.title;
         price.value = details.price;
         description.value = details.description;
-        image.value = details.image;
-        featuredYes.value = details.featured;
-        featuredNo.value = details.featured;
+        image.value = imageCheck;
         idInput.value = details.id;
-
-        console.log(featuredYes);
-        console.log(idInput);
+        featured.checked = details.featured;
 
         deleteButton(details.id);
 
@@ -71,24 +74,23 @@ function submitForm(event) {
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
     const imageValue = image.value.trim();
-    const featuredYesValue = featuredYes.value;
-    const featuredNoValue = featuredNo.value;
     const idValue = idInput.value;
+    const featuredValue = featured.checked;
 
-    console.log("priceValue", priceValue);
+    console.log("priceValue", featuredNo);
 
     if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0) {
         displayMessage("warning", "Enter valid values", ".message-container");
     }
 
-    updateProduct(titleValue, priceValue, descriptionValue, imageValue, featuredYesValue, featuredNoValue, idValue);
+    updateProduct(titleValue, priceValue, descriptionValue, imageValue, featuredValue, idValue);
 
 }
 
-async function updateProduct(title, price, description, image, featuredYes, featuredNo, id) {
+async function updateProduct(title, price, description, image, featured, id) {
 
     const url = baseUrl + "products/" + id;
-    const data = JSON.stringify({title: title, price: price, description: description, featured: featuredYes, featured: featuredNo, image_url: image});
+    const data = JSON.stringify({title: title, price: price, description: description, featured: featured, image_url: image});
 
     const token = getToken();
 

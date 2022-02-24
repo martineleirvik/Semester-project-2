@@ -2,7 +2,6 @@ import { baseUrl } from "./settings/api.js"
 import { getFromStorage } from "./utils/storage.js";
 import loginMenu from "./components/loginMenu.js";
 
-
 const detailsContainer = document.querySelector(".details");
 
 const queryString = document.location.search;
@@ -44,14 +43,17 @@ addButton.forEach((button) => {
 
 });
 
+const add = "Add to Cart";
+const added = "Added to Cart";
+
 function addToCart(event) {
     console.log(event);
 
-    if(this.innerHTML === "Add to Cart"){
-        this.innerHTML = "Added to Cart";
+    if(this.innerHTML === add){
+        this.innerHTML = added;
     }
     else {
-        this.innerHTML = "Add to Cart";
+        this.innerHTML = add;
     }
 
     const {id, title, price, image, alt} = this.dataset;

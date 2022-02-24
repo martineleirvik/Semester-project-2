@@ -1,3 +1,5 @@
+const baseUrl = "http://localhost:1337"
+
 const productsContainer = document.querySelector(".container");
 const noProductsContainer = document.querySelector(".noProducts");
 
@@ -7,8 +9,18 @@ export function renderProducts(render) {
     noProductsContainer.innerHTML = "";
 
     render.forEach(function (product){
+
+        let imageCheck = "";
+        
+        if(product.image) {
+            imageCheck = baseUrl + product.image.url;
+        }
+        if (product.image_url) {
+            imageCheck = product.image_url;
+        }
+
         productsContainer.innerHTML += `<a class="card" href="productDetails.html?id=${product.id}">
-                                            <img class="product-image" src="http://localhost:1337${product.image.formats.medium.url}" alt="${product.image.alternativeText}">
+                                            <img class="product-image" src="${imageCheck}" alt="">
                                             <div class="product-info">
                                             <h3>${product.title}</h3>
                                             <h4>$${product.price}</h4>
