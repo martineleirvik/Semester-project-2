@@ -10,6 +10,7 @@ const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image");
+const alt = document.querySelector("#alttext");
 const message = document.querySelector(".message-container");
 const featured = document.querySelector("#featured");
 
@@ -24,18 +25,19 @@ function submitForm(event) {
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
     const imageValue = image.value.trim();
+    const altValue = alt.value.trim();
     const featuredValue = featured.checked;
 
     console.log("featured", featured);
 
-    if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0) {
+    if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0 || altValue.length === 0) {
         displayMessage("warning", "Enter valid values", ".message-container");
     }
 
-    addProducts(titleValue, priceValue, descriptionValue, featuredValue, imageValue);
+    addProducts(titleValue, priceValue, descriptionValue, featuredValue, imageValue, altValue);
 }
 
-async function addProducts(title, price, description, featured, image) {
+async function addProducts(title, price, description, featured, image, alt) {
     const url = baseUrl + "products";
 
     const data = JSON.stringify({title: title, price: price, description: description, featured: featured, image_url: image});

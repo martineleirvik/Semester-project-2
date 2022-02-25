@@ -7,6 +7,7 @@ const detailsContainer = document.querySelector(".details");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
+const newUrl = "http://localhost:1337";
 
 if(!id) {
     document.location.href = "/";
@@ -20,16 +21,25 @@ const detailsUrl = baseUrl + "products/" + id;
 
     detailsContainer.innerHTML = "";
 
+    let imageCheck = "";
+        
+    if(details.image) {
+        imageCheck = newUrl + details.image.url;
+    }
+    if (details.image_url) {
+        imageCheck = details.image_url;
+    }
+
     detailsContainer.innerHTML = `<div class="product-wrapper">
                                     <div class="image-wrapper"> 
-                                        <img class="product-detail-image" src="http://localhost:1337${details.image.formats.medium.url}" alt="${details.image.alternativeText}">
+                                        <img class="product-detail-image" src="${imageCheck}" alt="">
                                     </div>
                                     <div class="text-wrapper">
                                         <h2>${details.title}</h2>
                                         <p id="price">$${details.price}</p>
                                         <p id="description">Product description:</p>
                                         <p id="description-text">${details.description}</p>
-                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="http://localhost:1337${details.image.formats.medium.url}" data-alt="${details.image.alternativeText}">Add to Cart</button>
+                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="${imageCheck}" data-alt="">Add to Cart</button>
                                     </div>
                                 </div>`;
 

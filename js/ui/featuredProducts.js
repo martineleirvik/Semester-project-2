@@ -1,12 +1,22 @@
 const featuredProducts = document.querySelector(".featured-slide");
+const baseUrl = "http://localhost:1337"
 
 export function getFeaturedProducts(products) {
 
     featuredProducts.innerHTML = "";
 
     products.forEach(function (product){
+
+        let imageCheck = "";
+        
+        if(product.image) {
+            imageCheck = baseUrl + product.image.url;
+        }
+        if (product.image_url) {
+            imageCheck = product.image_url;
+        }
         featuredProducts.innerHTML += `<a class="featured-card" href="productDetails.html?id=${product.id}">
-        <img class="featured-image" src="http://localhost:1337${product.image.formats.medium.url}" alt="${product.image.alternativeText}">
+        <img class="featured-image" src="${imageCheck}" alt="">
         <div class="feat-tx">
         <h4>${product.title}</h4>
         <p>$${product.price}</p>

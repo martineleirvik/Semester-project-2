@@ -1,4 +1,3 @@
-import { createNav } from "./components/nav.js";
 import { displayMessage } from "./components/displayMessage.js";
 import { saveToken, saveUser } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
@@ -10,7 +9,7 @@ const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const message = document.querySelector(".message-container");
 
-createNav();
+
 loginMenu();
 
 form.addEventListener("submit", submitForm);
