@@ -4,16 +4,20 @@ nav {
     align-items: center;
     justify-content: center;
     background-color: getColour(primary);
-    color: getColour(allwhite);
-    text-decoration: none;
-    font-family: $font-primary;
     padding: 15px 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     min-height: 6vh;
+
+    a {
+      color: getColour(allwhite);
+      text-decoration: none;
+      font-family: $font-primary;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
     .burger-menu {
       display: none;
+      cursor: pointer;
 
       div {
         width: 30px;
@@ -74,13 +78,47 @@ nav {
 }
 
 @media (max-width: 700px) {
+  .wrapper {
+    overflow-x: hidden;
+    position: relative;
+  }
+
   nav {
     .logo {
       justify-content: space-between;
+
+      h1 {
+        margin-left: 20px;
+      }
 
       .burger-menu {
         display: block;
       }
     }
+
+    .nav-bar {
+      .nav-links {
+        position: absolute;
+        right: 0;
+        height: 96vh;
+        top: 5vh;
+        background-color: getColour(primary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+
+        li {
+          letter-spacing: 2px;
+          opacity: 0;
+        }
+      }
+    }
   }
+}
+
+.nav-active {
+  transform: translateX(0%);
 }

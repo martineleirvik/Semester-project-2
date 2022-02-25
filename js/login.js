@@ -3,10 +3,12 @@ import { saveToken, saveUser } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 import loginMenu from "./components/loginMenu.js";
 
+
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const message = document.querySelector(".message-container");
+
 
 loginMenu();
 
