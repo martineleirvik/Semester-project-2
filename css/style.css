@@ -120,9 +120,9 @@ nav .nav-bar .nav-links li {
   }
   nav .nav-bar .nav-links {
     position: absolute;
-    right: 0;
+    right: 0px;
     height: 96vh;
-    top: 5vh;
+    top: 6vh;
     background-color: #7aa2bc;
     display: -webkit-box;
     display: -ms-flexbox;
