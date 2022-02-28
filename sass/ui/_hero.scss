@@ -1,13 +1,56 @@
 .hero-banner {
   margin-top: 60px;
+  position: relative;
+  text-align: center;
+  background-color: aliceblue;
+  margin-top: 0;
 
   .hero {
     img {
       max-width: 100%;
     }
+  }
 
-    #hero-btn {
-      background-color: getColour(primary);
+  .hero-text {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    font-size: 0.8rem;
+    font-family: $font-secondary;
+    margin-right: 20px;
+    text-align: right;
+
+    button {
+      background-color: getColour(darkblue);
+      padding: 8px 10px;
+      border: none;
+      border-radius: 15px;
+      margin-top: 10px;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: getColour(allwhite);
+      }
+    }
+
+    p {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .hero-banner {
+    .hero-text {
+      top: 25%;
+      left: 60%;
+      font-size: 1.5rem;
+
+      button {
+        padding: 12px 15px;
+        margin-top: 15px;
+      }
     }
   }
 }

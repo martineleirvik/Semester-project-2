@@ -107,18 +107,18 @@ nav .nav-bar .nav-links li {
     overflow-x: hidden;
     position: relative;
   }
-  nav .logo {
+  .wrapper nav .logo {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  nav .logo h1 {
+  .wrapper nav .logo h1 {
     margin-left: 20px;
   }
-  nav .logo .burger-menu {
+  .wrapper nav .logo .burger-menu {
     display: block;
   }
-  nav .nav-bar .nav-links {
+  .wrapper nav .nav-bar .nav-links {
     position: absolute;
     right: 0px;
     height: 96vh;
@@ -142,7 +142,7 @@ nav .nav-bar .nav-links li {
     transition: transform 0.5s ease-in;
     transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
-  nav .nav-bar .nav-links li {
+  .wrapper nav .nav-bar .nav-links li {
     letter-spacing: 2px;
     opacity: 0;
   }
@@ -153,8 +153,49 @@ nav .nav-bar .nav-links li {
           transform: translateX(0%);
 }
 
+@-webkit-keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+          transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -6px);
+          transform: rotate(45deg) translate(-5px, -6px);
+}
+
 footer {
   width: 100%;
+  bottom: 0;
   background-color: #909090;
   text-align: center;
   color: #ffffff;
@@ -211,14 +252,54 @@ form button {
 
 .hero-banner {
   margin-top: 60px;
+  position: relative;
+  text-align: center;
+  background-color: aliceblue;
+  margin-top: 0;
 }
 
 .hero-banner .hero img {
   max-width: 100%;
 }
 
-.hero-banner .hero #hero-btn {
-  background-color: #7aa2bc;
+.hero-banner .hero-text {
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  font-size: 0.8rem;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.hero-banner .hero-text button {
+  background-color: #506a7d;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.hero-banner .hero-text button a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.hero-banner .hero-text p {
+  margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  .hero-banner .hero-text {
+    top: 25%;
+    left: 60%;
+    font-size: 1.5rem;
+  }
+  .hero-banner .hero-text button {
+    padding: 12px 15px;
+    margin-top: 15px;
+  }
 }
 
 .editcard {
