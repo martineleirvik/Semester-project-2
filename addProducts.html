@@ -14,14 +14,14 @@
 <body>
   <header>
     <nav>
-        <a class="logo" href="index.html">
-          <h1 id="nav-colour-white">Sneaker Store</h1>
+        <div class="logo">
+          <h1><a href="index.html">Sneaker Store</a></h1>
           <div class="burger-menu">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
           </div>
-        </a>
+        </div>
         <div class="nav-bar">
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -51,10 +51,10 @@
             <label for="price">Price</label>
             <input id="price">
         </div>
-        <div>
-            <label for="description">Description</label>
-            <input id="description">
-        </div>
+       <div>
+        <label for="description">Description</label>
+        <textarea id="description" rows="5"></textarea>
+       </div> 
         <div>
             <label for="image">Image-url</label>
             <input id="image">
@@ -63,8 +63,8 @@
           <label for="image">Alt text for image</label>
           <input id="alttext">
       </div>
-        <div>
-          <label for="featured">Featured product?</label>
+        <div class="featured">
+          <p>Featured product?</p>
           <input id="featured" type="checkbox">
       </div>
        <button>Add product</button> 
