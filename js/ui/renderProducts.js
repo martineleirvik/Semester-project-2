@@ -20,7 +20,7 @@ export function renderProducts(render) {
         }
 
         productsContainer.innerHTML += `<a class="card" href="productDetails.html?id=${product.id}">
-                                            <img class="product-image" src="${imageCheck}" alt="">
+                                            <img class="product-image" src="${imageCheck}" alt="${product.title}">
                                             <div class="product-info">
                                             <h3>${product.title}</h3>
                                             <h4>$${product.price}</h4>

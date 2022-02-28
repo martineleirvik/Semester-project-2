@@ -32,14 +32,14 @@ const detailsUrl = baseUrl + "products/" + id;
 
     detailsContainer.innerHTML = `<div class="product-wrapper">
                                     <div class="image-wrapper"> 
-                                        <img class="product-detail-image" src="${imageCheck}" alt="">
+                                        <img class="product-detail-image" src="${imageCheck}" alt="${details.title}">
                                     </div>
                                     <div class="text-wrapper">
                                         <h2>${details.title}</h2>
                                         <p id="price">$${details.price}</p>
                                         <p id="description">Product description:</p>
                                         <p id="description-text">${details.description}</p>
-                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="${imageCheck}" data-alt="">Add to Cart</button>
+                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="${imageCheck}" data-alt="${details.title}">Add to Cart</button>
                                     </div>
                                 </div>`;
 

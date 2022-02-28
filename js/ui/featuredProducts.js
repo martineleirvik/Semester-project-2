@@ -16,7 +16,7 @@ export function getFeaturedProducts(products) {
             imageCheck = product.image_url;
         }
         featuredProducts.innerHTML += `<a class="featured-card" href="productDetails.html?id=${product.id}">
-        <img class="featured-image" src="${imageCheck}" alt="">
+        <img class="featured-image" src="${imageCheck}" alt="${product.title}">
         <div class="feat-tx">
         <h4>${product.title}</h4>
         <p>$${product.price}</p>

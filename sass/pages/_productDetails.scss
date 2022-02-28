@@ -16,12 +16,17 @@
     text-align: left;
     margin: 0 auto 20px auto;
 
+    h2 {
+      text-align: left;
+    }
+
     #description {
       font-weight: bold;
     }
 
     #description-text {
       max-width: 500px;
+      overflow-wrap: break-word;
     }
 
     #price {
@@ -32,7 +37,6 @@
       background-color: getColour(darkblue);
       padding: 20px 50px;
       color: getColour(allwhite);
-      font-weight: bold;
       font-size: 1.4rem;
       border: none;
       cursor: pointer;
@@ -64,10 +68,6 @@
     .text-wrapper {
       text-align: left;
       margin: 20px 50px 0 0;
-
-      h2 {
-        text-align: left;
-      }
 
       #description-text {
         max-width: 500px;
