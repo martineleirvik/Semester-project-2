@@ -13,14 +13,14 @@
   }
 
   .text-wrapper {
-    text-align: center;
+    text-align: left;
+    margin: 0 auto 20px auto;
 
     #description {
       font-weight: bold;
     }
 
     #description-text {
-      margin: 0 auto 20px auto;
       max-width: 500px;
     }
 
@@ -30,7 +30,7 @@
 
     button.addBtn {
       background-color: getColour(darkblue);
-      padding: 20px 60px;
+      padding: 20px 50px;
       color: getColour(allwhite);
       font-weight: bold;
       font-size: 1.4rem;

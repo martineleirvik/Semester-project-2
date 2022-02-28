@@ -1,6 +1,6 @@
 form {
   max-width: 400px;
-  margin: 30px;
+  margin: 0 auto;
 
   div {
     margin-bottom: 10px;
@@ -20,4 +20,8 @@ form {
     border: none;
     cursor: pointer;
   }
+}
+
+.form-wrapper {
+  margin: 0 20px;
 }
