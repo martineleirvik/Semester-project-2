@@ -4,7 +4,7 @@ import { displayMessage } from "./components/displayMessage.js";
 import  loginMenu from "./components/loginMenu.js";
 import { deleteButton } from "./components/delete/deleteBtn.js"
 
-loginMenu();
+
 
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);

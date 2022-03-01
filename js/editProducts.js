@@ -4,7 +4,7 @@ import { editRenderProducts } from "./ui/editRenderProducts.js";
 
 const productsUrl = baseUrl + "products";
 
-loginMenu();
+
 
 (async function() {
 

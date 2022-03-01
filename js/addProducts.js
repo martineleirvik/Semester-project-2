@@ -3,7 +3,7 @@ import  loginMenu from "./components/loginMenu.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 
-loginMenu();
+
 
 const form = document.querySelector("form");
 const title = document.querySelector("#title");
