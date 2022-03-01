@@ -60,7 +60,6 @@ nav .menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 6px;
 }
 
 nav .menu .customer-menu {
@@ -274,7 +273,7 @@ form button {
 .hero-banner .hero-text {
   position: absolute;
   top: 20%;
-  left: 60%;
+  left: 55%;
   font-size: 0.8rem;
   margin-right: 20px;
   text-align: right;
@@ -303,7 +302,6 @@ form button {
 @media (min-width: 700px) {
   .hero-banner .hero-text {
     top: 25%;
-    left: 60%;
     font-size: 1.5rem;
     margin-right: 40px;
   }
@@ -398,7 +396,6 @@ h4 {
 .container h3,
 .container p {
   color: #000000;
-  font-family: "Source Sans Pro", sans-serif;
 }
 
 .container button {
@@ -419,7 +416,6 @@ h4 {
   margin: 30px;
   text-align: center;
   font-size: 1.5rem;
-  font-family: "Source Sans Pro", sans-serif;
 }
 
 @media (min-width: 700px) {
