@@ -31,7 +31,7 @@ function submitForm(event) {
 
 async function doLogin(username, password) {
 
-    const url = baseUrl + "auth/local";
+    const url = baseUrl + "/auth/local";
     const data = JSON.stringify({ identifier: username, password: password });
     const options = {
         method: "POST",
@@ -59,7 +59,7 @@ async function doLogin(username, password) {
         }
     }
     catch(error) {
-        console.log(error)
+        displayMessage("error", "An error occured", ".message-container");
     }
 
 

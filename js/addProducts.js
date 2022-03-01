@@ -34,7 +34,7 @@ function submitForm(event) {
 }
 
 async function addProducts(title, price, description, featured, image) {
-    const url = baseUrl + "products";
+    const url = baseUrl + "/products";
 
     const data = JSON.stringify({title: title, price: price, description: description, featured: featured, image_url: image});
 

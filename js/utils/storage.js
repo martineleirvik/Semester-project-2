@@ -1,5 +1,5 @@
-const tokenKey = "token";
-const userKey = "user";
+import { tokenKey } from "../settings/storageKey.js";
+import { userKey } from "../settings/storageKey.js";
 
 export function saveToken(token) {
     saveToStorage(tokenKey, token);

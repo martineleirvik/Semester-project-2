@@ -1,9 +1,9 @@
 import { baseUrl } from "./settings/api.js";
 import { renderProducts } from "./ui/renderProducts.js";
 import { searchProducts } from "./ui/searchProducts.js";
+import { displayMessage } from "./components/displayMessage.js"
 
-const productsUrl = baseUrl + "products";
-
+const productsUrl = baseUrl + "/products";
 
 (async function() {
 
@@ -17,7 +17,7 @@ const productsUrl = baseUrl + "products";
         
     }
     catch (error) {
-        console.log(error)
+        displayMessage("error", "An error occured", ".container");
     }
 
 })();

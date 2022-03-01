@@ -7,13 +7,12 @@ const detailsContainer = document.querySelector(".details");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const newUrl = "http://localhost:1337";
 
 if(!id) {
     document.location.href = "/";
 }
 
-const detailsUrl = baseUrl + "products/" + id;
+const detailsUrl = baseUrl + "/products/" + id;
 
 (async function () {
     const response = await fetch(detailsUrl);
@@ -24,7 +23,7 @@ const detailsUrl = baseUrl + "products/" + id;
     let imageCheck = "";
         
     if(details.image) {
-        imageCheck = newUrl + details.image.url;
+        imageCheck = baseUrl + details.image.url;
     }
     if (details.image_url) {
         imageCheck = details.image_url;

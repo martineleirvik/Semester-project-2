@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:1337"
+import { baseUrl } from "../settings/api.js";
 
 const productsContainer = document.querySelector(".container");
 const noProductsContainer = document.querySelector(".noProducts");

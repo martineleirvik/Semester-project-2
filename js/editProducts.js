@@ -1,10 +1,9 @@
 import { baseUrl } from "./settings/api.js";
+import { displayMessage } from "./components/displayMessage.js";
 import loginMenu from "./components/loginMenu.js";
 import { editRenderProducts } from "./ui/editRenderProducts.js";
 
-const productsUrl = baseUrl + "products";
-
-
+const productsUrl = baseUrl + "/products";
 
 (async function() {
 
@@ -17,7 +16,7 @@ const productsUrl = baseUrl + "products";
 
     }
     catch (error) {
-        console.log(error)
+        displayMessage("error", "An error occured", ".container");
     }
 
 })();

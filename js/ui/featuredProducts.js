@@ -1,5 +1,6 @@
+import { baseUrl } from "../settings/api.js";
+
 const featuredProducts = document.querySelector(".featured-slide");
-const baseUrl = "http://localhost:1337"
 
 export function getFeaturedProducts(products) {
 

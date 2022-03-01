@@ -14,9 +14,7 @@ if(!id) {
     document.location.href = "/";
 }
 
-
-const productsUrl = baseUrl + "products/" + id;
-const Url = "http://localhost:1337";
+const productsUrl = baseUrl + "/products/" + id;
 
 const form = document.querySelector(".edit-form");
 const title = document.querySelector("#title");
@@ -37,7 +35,7 @@ const featured = document.querySelector("#editfeatured");
 
         let imageCheck = "";
         if (details.image) {
-            imageCheck = Url + details.image.url;
+            imageCheck = baseUrl + details.image.url;
         }
         if (details.image_url) {
             imageCheck = details.image_url;
@@ -54,7 +52,7 @@ const featured = document.querySelector("#editfeatured");
 
     }
     catch (error) {
-        console.log(error)
+        displayMessage("error", "An error occured", ".message-container");
     }
     finally {
         loading.style.display = "none";
@@ -89,7 +87,7 @@ function submitForm(event) {
 
 async function updateProduct(title, price, description, image, featured, id) {
 
-    const url = baseUrl + "products/" + id;
+    const url = baseUrl + "/products/" + id;
     const data = JSON.stringify({title: title, price: price, description: description, featured: featured, image_url: image});
 
     const token = getToken();

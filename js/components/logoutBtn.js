@@ -1,7 +1,5 @@
 import { getUsername, clearKeyStorage } from "../utils/storage.js";
-
-const userKey = "user";
-
+import { userKey } from "../settings/storageKey.js";
 
 export function logoutBtn() {
 

@@ -1,12 +1,12 @@
 import { baseUrl } from "./settings/api.js";
+import { displayMessage } from "./components/displayMessage.js";
 import { navSlide } from "./components/nav.js";
 import { createHero } from "./ui/hero.js";
 import loginMenu from "./components/loginMenu.js";
 import { getFeaturedProducts } from "./ui/featuredProducts.js";
 
-const homeUrl = baseUrl + "home";
-const featuredUrl = baseUrl + "products?featured=true";
-const heroContainer = document.querySelector(".hero-banner");
+const homeUrl = baseUrl + "/home";
+const featuredUrl = baseUrl + "/products?featured=true";
 
 navSlide();
 loginMenu();
@@ -28,7 +28,7 @@ loginMenu();
         
     }
     catch (error) {
-        console.log(error);
+        displayMessage("error", "An error occured", ".hero-banner");
     }
 
 })();
