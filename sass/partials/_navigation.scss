@@ -1,0 +1,150 @@
+nav {
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: getColour(primary);
+    padding: 10px 0;
+    min-height: 6vh;
+
+    a {
+      color: getColour(allwhite);
+      text-decoration: none;
+      font-family: $font-primary;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 1.8rem;
+    }
+
+    .burger-menu {
+      display: none;
+      cursor: pointer;
+
+      div {
+        width: 30px;
+        height: 3px;
+        background-color: getColour(allwhite);
+        margin: 7px 30px;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 6px;
+
+    .customer-menu {
+      width: 30%;
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      li {
+        list-style: none;
+
+        a {
+          color: getColour(black);
+          text-decoration: none;
+        }
+      }
+    }
+
+    .admin-menu {
+      width: 50%;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      li {
+        list-style: none;
+
+        a {
+          color: getColour(black);
+          text-decoration: none;
+          float: right;
+        }
+      }
+
+      #logout-link {
+        padding: 0 10px;
+        border: none;
+        background-color: getColour(allwhite);
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .body-wrapper {
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  nav {
+    .logo {
+      justify-content: space-between;
+
+      h1 {
+        margin-left: 40px;
+      }
+
+      .burger-menu {
+        display: block;
+      }
+    }
+    .menu-container {
+      z-index: 1;
+      position: absolute;
+      right: 0px;
+      height: 94vh;
+      top: 6vh;
+      background-color: getColour(primary);
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .customer-menu {
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+        li {
+          opacity: 1;
+        }
+      }
+
+      .admin-menu {
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+        li {
+          opacity: 1;
+        }
+
+        #logout-link {
+          background-color: getColour(primary);
+        }
+      }
+    }
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}

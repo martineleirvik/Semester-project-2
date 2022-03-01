@@ -26,7 +26,7 @@ nav .logo {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #7aa2bc;
-  padding: 15px 0;
+  padding: 10px 0;
   min-height: 6vh;
 }
 
@@ -36,7 +36,7 @@ nav .logo a {
   font-family: "Lora", serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 nav .logo .burger-menu {
@@ -51,8 +51,7 @@ nav .logo .burger-menu div {
   margin: 7px 30px;
 }
 
-nav .nav-bar {
-  border-bottom: 1px solid #909090;
+nav .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,72 +60,80 @@ nav .nav-bar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 30px;
+  padding-top: 6px;
 }
 
-nav .nav-bar .nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+nav .menu .customer-menu {
   width: 30%;
-  margin: 10px 0;
 }
 
-nav .nav-bar .nav-links a {
-  text-decoration: none;
-  color: #000000;
+nav .menu .customer-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-nav .nav-bar .nav-links li {
+nav .menu .customer-menu li {
   list-style: none;
 }
 
-.login-container .login-btn {
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-.login-container .login-btn a {
+nav .menu .customer-menu li a {
   color: #000000;
   text-decoration: none;
 }
 
-.login-container .login-btn #logout-link {
+nav .menu .admin-menu {
+  width: 50%;
+}
+
+nav .menu .admin-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav .menu .admin-menu li {
+  list-style: none;
+}
+
+nav .menu .admin-menu li a {
+  color: #000000;
+  text-decoration: none;
+  float: right;
+}
+
+nav .menu .admin-menu #logout-link {
   padding: 0 10px;
   border: none;
   background-color: #ffffff;
 }
 
-.login-container .login-btn .edit-products-link {
-  border-left: 1px solid #909090;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
 @media (max-width: 700px) {
-  .wrapper {
+  .body-wrapper {
     overflow-x: hidden;
     position: relative;
   }
-  .wrapper nav .logo {
+  nav .logo {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .wrapper nav .logo h1 {
-    margin-left: 20px;
+  nav .logo h1 {
+    margin-left: 40px;
   }
-  .wrapper nav .logo .burger-menu {
+  nav .logo .burger-menu {
     display: block;
   }
-  .wrapper nav .nav-bar .nav-links {
+  nav .menu-container {
+    z-index: 1;
     position: absolute;
     right: 0px;
-    height: 96vh;
+    height: 94vh;
     top: 6vh;
     background-color: #7aa2bc;
     display: -webkit-box;
@@ -136,9 +143,6 @@ nav .nav-bar .nav-links li {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     width: 50%;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
@@ -147,55 +151,53 @@ nav .nav-bar .nav-links li {
     transition: transform 0.5s ease-in;
     transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
-  .wrapper nav .nav-bar .nav-links li {
-    letter-spacing: 2px;
-    opacity: 0;
+  nav .menu-container .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav .menu-container .customer-menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  nav .menu-container .customer-menu li {
+    opacity: 1;
+  }
+  nav .menu-container .admin-menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  nav .menu-container .admin-menu li {
+    opacity: 1;
+  }
+  nav .menu-container .admin-menu #logout-link {
+    background-color: #7aa2bc;
   }
 }
 
 .nav-active {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
-}
-
-@-webkit-keyframes navLinkFade {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
-}
-
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
-}
-
-.toggle .line1 {
-  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
-          transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line2 {
-  opacity: 0;
-}
-
-.toggle .line3 {
-  -webkit-transform: rotate(45deg) translate(-5px, -6px);
-          transform: rotate(45deg) translate(-5px, -6px);
 }
 
 footer {
@@ -263,10 +265,9 @@ form button {
 }
 
 .hero-banner {
-  margin-top: 60px;
+  margin-top: 0;
   position: relative;
   text-align: center;
-  margin-top: 0;
 }
 
 .hero-banner .hero img {
