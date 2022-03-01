@@ -80,7 +80,7 @@ function submitForm(event) {
     console.log("priceValue", featured);
 
     if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0) {
-        displayMessage("warning", "Enter valid values", ".message-container");
+        return displayMessage("warning", "Enter valid values", ".message-container");
     }
 
     updateProduct(titleValue, priceValue, descriptionValue, imageValue, featuredValue, idValue);
@@ -118,7 +118,7 @@ async function updateProduct(title, price, description, image, featured, id) {
         }
     }
     catch(error) {
-        console.log(error);
+        displayMessage("error", "An error occured", ".message-container");
     }
 
 }

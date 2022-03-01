@@ -26,10 +26,8 @@ function submitForm(event) {
     const imageValue = image.value.trim();
     const featuredValue = featured.checked;
 
-    console.log("featured", featured);
-
-    if(titleValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0) {
-        displayMessage("warning", "Enter valid values", ".message-container");
+    if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0) {
+        return displayMessage("warning", "Enter valid values", ".message-container");
     }
 
     addProducts(titleValue, priceValue, descriptionValue, featuredValue, imageValue);
