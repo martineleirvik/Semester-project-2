@@ -25,7 +25,7 @@ export function renderProducts(render) {
                                             <h3>${product.title}</h3>
                                             <h4>$${product.price}</h4>
                                             </div>
-                                            <p><button>Add to Cart</button></p>
+                                            <p><button>View Product</button></p>
                                         </a>`;
     });
 
