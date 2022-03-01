@@ -15,6 +15,21 @@ h2 {
   margin: 30px 0;
 }
 
+main {
+  min-height: 100vh;
+  margin-bottom: 100px;
+}
+
+footer {
+  width: 100%;
+  bottom: 0;
+  background-color: #909090;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 20px 0;
+}
+
 nav .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,6 +75,7 @@ nav .menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 1px solid #909090;
 }
 
 nav .menu .customer-menu {
@@ -197,15 +213,6 @@ nav .menu .admin-menu #logout-link {
 .nav-active {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
-}
-
-footer {
-  width: 100%;
-  bottom: 0;
-  background-color: #909090;
-  text-align: center;
-  color: #ffffff;
-  margin-top: 100px;
 }
 
 form {

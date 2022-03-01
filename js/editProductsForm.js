@@ -1,10 +1,10 @@
 import { baseUrl } from "./settings/api.js";
 import { getToken } from "./utils/storage.js";
 import { displayMessage } from "./components/displayMessage.js";
-import  loginMenu from "./components/loginMenu.js";
+import navBar from "./components/navBar.js";
 import { deleteButton } from "./components/delete/deleteBtn.js"
 
-
+navBar();
 
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);

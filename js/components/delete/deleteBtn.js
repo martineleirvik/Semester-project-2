@@ -1,5 +1,6 @@
 import { baseUrl } from "../../settings/api.js";
 import { getToken } from "../../utils/storage.js";
+import { displayMessage } from "../displayMessage.js";
 
 export function deleteButton(id) {
     const container = document.querySelector(".delete-container");
@@ -16,7 +17,7 @@ export function deleteButton(id) {
 
     if(confirmDelete) {
 
-        const url = baseUrl + "products/" + id;
+        const url = baseUrl + "/products/" + id;
 
         const token = getToken();
 
@@ -36,7 +37,8 @@ export function deleteButton(id) {
 
         }
         catch (error){
-            console.log(error)
+            displayMessage("error", "An error occured", ".message-container");
+
         }
             
         }

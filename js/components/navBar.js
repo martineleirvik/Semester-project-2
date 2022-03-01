@@ -1,7 +1,7 @@
 import { getUsername } from "../utils/storage.js";
 import { logoutBtn } from "./logoutBtn.js";
 
-export default function loginMenu() {
+export default function navBar() {
 
     const { pathname } = document.location;
     const container = document.querySelector(".menu-container");

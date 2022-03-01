@@ -1,4 +1,7 @@
+import navBar from "./components/navBar.js";
 import { getFromStorage } from "./utils/storage.js";
+
+navBar();
 
 const products = getFromStorage("products");
 const cartContainer = document.querySelector(".cart-container");

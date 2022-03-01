@@ -1,15 +1,15 @@
 import { baseUrl } from "./settings/api.js";
 import { displayMessage } from "./components/displayMessage.js";
-import { navSlide } from "./components/nav.js";
+import { navSlide } from "./components/navSlide.js";
 import { createHero } from "./ui/hero.js";
-import loginMenu from "./components/loginMenu.js";
+import navBar from "./components/navBar.js";
 import { getFeaturedProducts } from "./ui/featuredProducts.js";
 
 const homeUrl = baseUrl + "/home";
 const featuredUrl = baseUrl + "/products?featured=true";
 
 navSlide();
-loginMenu();
+navBar();
 
 (async function() {
 

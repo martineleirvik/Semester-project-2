@@ -1,9 +1,9 @@
 import { displayMessage } from "./components/displayMessage.js";
-import  loginMenu from "./components/loginMenu.js";
+import navBar from "./components/navBar.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 
-
+navBar();
 
 const form = document.querySelector("form");
 const title = document.querySelector("#title");

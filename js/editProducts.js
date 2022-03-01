@@ -1,7 +1,9 @@
 import { baseUrl } from "./settings/api.js";
 import { displayMessage } from "./components/displayMessage.js";
-import loginMenu from "./components/loginMenu.js";
+import navBar from "./components/navBar.js";
 import { editRenderProducts } from "./ui/editRenderProducts.js";
+
+navBar();
 
 const productsUrl = baseUrl + "/products";
 

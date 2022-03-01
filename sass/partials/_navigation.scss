@@ -33,6 +33,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-bottom: 1px solid getColour(secondary);
 
     .customer-menu {
       width: 30%;

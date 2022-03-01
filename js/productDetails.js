@@ -1,6 +1,8 @@
-import { baseUrl } from "./settings/api.js"
+import { baseUrl } from "./settings/api.js";
+import navBar from "./components/navBar.js";
 import { getFromStorage } from "./utils/storage.js";
-import loginMenu from "./components/loginMenu.js";
+
+navBar();
 
 const detailsContainer = document.querySelector(".details");
 
