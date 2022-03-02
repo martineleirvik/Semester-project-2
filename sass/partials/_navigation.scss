@@ -117,7 +117,7 @@ nav {
       position: absolute;
       right: 0px;
       height: 94vh;
-      top: 5vh;
+      top: 6vh;
       background-color: getColour(primary);
       display: flex;
       flex-direction: column;
@@ -156,7 +156,7 @@ nav {
           opacity: 0;
           padding-bottom: 50px;
           a {
-            justify-content: center;
+            float: none;
           }
         }
 

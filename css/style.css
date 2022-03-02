@@ -186,7 +186,7 @@ nav .menu .admin-menu .active {
     position: absolute;
     right: 0px;
     height: 94vh;
-    top: 5vh;
+    top: 6vh;
     background-color: #7aa2bc;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -249,9 +249,7 @@ nav .menu .admin-menu .active {
     padding-bottom: 50px;
   }
   nav .menu-container .admin-menu li a {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    float: none;
   }
   nav .menu-container .admin-menu #logout-link {
     background-color: #7aa2bc;
