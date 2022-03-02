@@ -16,8 +16,7 @@ h2 {
 }
 
 main {
-  min-height: 100vh;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 footer {
@@ -28,6 +27,22 @@ footer {
   color: #ffffff;
   font-size: 1.2rem;
   padding: 20px 0;
+  margin-top: auto;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.active {
+  text-decoration: underline;
 }
 
 nav .logo {
@@ -129,7 +144,7 @@ nav .menu .admin-menu #logout-link {
 }
 
 @media (max-width: 700px) {
-  .body-wrapper {
+  .flex-container {
     overflow-x: hidden;
     position: relative;
   }

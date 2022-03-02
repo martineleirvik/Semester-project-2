@@ -12,17 +12,17 @@ export default function navBar() {
 
     if (username) {
         loginLink = `<ul>
-        <li><a href="addProducts.html" class="edit-products-link">Add products</a></li>
-        <li><a href="editProducts.html" class="edit-products-link">Edit products</a></li>
+        <li><a href="addProducts.html" class="${pathname === "/addProducts.html" ? "active" : ""}">Add products</a></li>
+        <li><a href="editProducts.html" class="${pathname === "/editProducts.html" ? "active" : ""}">Edit products</a></li>
         <li><button id="logout-link">Logout <strong>${username}</strong></button></li>
         </ul>`}
 
     container.innerHTML = `<div class="menu">
                                 <div class="customer-menu">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="products.html">Shop</a></li>
-                                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i><span>0</span></a></li>
+                                    <li><a href="index.html" class="${pathname === "/" || pathname === "/index.html" ? "active" : ""}">Home</a></li>
+                                    <li><a href="products.html" class="${pathname === "/products.html" ? "active" : ""}">Shop</a></li>
+                                    <li><a href="cart.html" class="${pathname === "/cart.html" ? "active" : ""}"><i class="fas fa-shopping-cart"></i><span>0</span></a></li>
                                 </ul>
                                 </div>
                                 <div class="admin-menu">
