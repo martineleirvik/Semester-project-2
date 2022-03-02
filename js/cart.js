@@ -64,7 +64,6 @@ parseData.map(data => {
 
 
  const removeCartProductBtn = document.querySelectorAll(".btn-remove");
-    console.log(removeCartProductBtn);
     for (var i = 0; i < removeCartProductBtn.length; i++) {
     var button = removeCartProductBtn[i]
     button.addEventListener("click", handleRemovingProduct)
@@ -78,9 +77,6 @@ function getProductFromStorage () {
     }
     return JSON.parse(removeFromStorage);
 }
-const currentStorage = getProductFromStorage();
-console.log(currentStorage);
-
 
 function handleRemovingProduct() {
     const id = this.dataset.id;
@@ -102,3 +98,10 @@ function handleRemovingProduct() {
 function saveProduct(prod) {
     localStorage.setItem("products", JSON.stringify(prod));
 }
+
+const currentStorage = getProductFromStorage().length;
+
+const numberInStorage = parseInt(currentStorage)
+console.log(typeof numberInStorage);
+
+

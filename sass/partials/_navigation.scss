@@ -50,6 +50,13 @@ nav {
           color: getColour(black);
           text-decoration: none;
         }
+        a:hover {
+          color: getColour(darkblue);
+        }
+      }
+
+      .active {
+        text-decoration: underline;
       }
     }
 
@@ -69,12 +76,18 @@ nav {
           text-decoration: none;
           float: right;
         }
+        a:hover {
+          color: getColour(darkblue);
+        }
       }
 
       #logout-link {
         padding: 0 10px;
         border: none;
         background-color: getColour(allwhite);
+      }
+      .active {
+        text-decoration: underline;
       }
     }
   }
@@ -103,7 +116,7 @@ nav {
       position: absolute;
       right: 0px;
       height: 94vh;
-      top: 6vh;
+      top: 5vh;
       background-color: getColour(primary);
       display: flex;
       flex-direction: column;
@@ -114,6 +127,7 @@ nav {
       .menu {
         display: flex;
         flex-direction: column;
+        border-bottom: none;
       }
 
       .customer-menu {
@@ -124,6 +138,10 @@ nav {
         }
         li {
           opacity: 1;
+          padding-bottom: 50px;
+        }
+        li:first-child {
+          padding-top: 50px;
         }
       }
 
@@ -135,6 +153,10 @@ nav {
         }
         li {
           opacity: 1;
+          padding-bottom: 50px;
+          a {
+            justify-content: center;
+          }
         }
 
         #logout-link {
@@ -146,5 +168,5 @@ nav {
 }
 
 .nav-active {
-  transform: translateX(0%);
+  transform: translateX(0%) !important;
 }

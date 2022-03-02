@@ -3,8 +3,10 @@ import { renderProducts } from "./ui/renderProducts.js";
 import { searchProducts } from "./ui/searchProducts.js";
 import { displayMessage } from "./components/displayMessage.js"
 import navBar from "./components/navBar.js"
+import { navSlide } from "./components/navSlide.js";
 
 navBar();
+navSlide();
 
 const productsUrl = baseUrl + "/products";
 
