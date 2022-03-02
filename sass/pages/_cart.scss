@@ -1,3 +1,16 @@
+.cart-titles {
+  display: flex;
+  margin: 0 20px;
+  font-weight: bold;
+
+  #product {
+    width: 53%;
+  }
+  #price {
+    margin-right: 10px;
+  }
+}
+
 .cart-container {
   .cart-card {
     margin: 0 20px;
@@ -74,6 +87,20 @@
 }
 
 @media (min-width: 700px) {
+  .cart-titles {
+    margin: 0 50px;
+
+    #product {
+      width: 53%;
+    }
+    #price {
+      width: 32%;
+      margin: 0;
+    }
+    #quantity {
+      width: 15%;
+    }
+  }
   .cart-container {
     .cart-card {
       display: flex;
@@ -107,6 +134,10 @@
       .cart-quantity {
         width: 22%;
       }
+    }
+
+    .cart-card:first-child {
+      margin-top: 0;
     }
   }
   .cart-total-purchase {
