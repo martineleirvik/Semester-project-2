@@ -83,6 +83,8 @@ nav .logo .burger-menu div {
   height: 3px;
   background-color: #ffffff;
   margin: 7px 30px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 nav .menu {
@@ -224,7 +226,7 @@ nav .menu .admin-menu .active {
             justify-content: space-evenly;
   }
   nav .menu-container .customer-menu li {
-    opacity: 1;
+    opacity: 0;
     padding-bottom: 50px;
   }
   nav .menu-container .customer-menu li:first-child {
@@ -243,7 +245,7 @@ nav .menu .admin-menu .active {
             justify-content: space-evenly;
   }
   nav .menu-container .admin-menu li {
-    opacity: 1;
+    opacity: 0;
     padding-bottom: 50px;
   }
   nav .menu-container .admin-menu li a {
@@ -259,6 +261,46 @@ nav .menu .admin-menu .active {
 .nav-active {
   -webkit-transform: translateX(0%) !important;
           transform: translateX(0%) !important;
+}
+
+@-webkit-keyframes linksFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes linksFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  -webkit-transform: rotate(-45deg) translate(-8px, 6px);
+          transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -6px);
+          transform: rotate(45deg) translate(-8px, -6px);
 }
 
 form {

@@ -8,8 +8,9 @@ import { getFeaturedProducts } from "./ui/featuredProducts.js";
 const homeUrl = baseUrl + "/home";
 const featuredUrl = baseUrl + "/products?featured=true";
 
-navSlide();
 navBar();
+navSlide();
+
 
 (async function() {
 
