@@ -9,6 +9,8 @@ const detailsContainer = document.querySelector(".details");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
+const add = "Add to Cart";
+const added = "Added to Cart";
 
 if(!id) {
     document.location.href = "/";
@@ -54,8 +56,7 @@ addButton.forEach((button) => {
 
 });
 
-const add = "Add to Cart";
-const added = "Added to Cart";
+
 
 function addToCart(event) {
     console.log(event);
@@ -92,7 +93,7 @@ function saveToStorage(prod) {
 
 })();
 
-/// check if product is in LS and then adding the proper innerHTML for the button
+/// check if product is in LS and then adding matching innerHTML for the button
 
 function checkIfInStorage() {
 
@@ -102,14 +103,15 @@ function checkIfInStorage() {
     const productExsist = currentProducts.find(function(item) {
         return item.id === id;
     });
+    const productId = productExsist.id;
 
-    console.log(productExsist);
+    console.log(productId);
 
-    if(productExsist === id) {
-        addButton.innerHTML = "Added to Cart"
+    if(productId === id) {
+        addButton.innerHTML = added;
     }
     else {
-        addButton.innerHTML = "Add to Cart"        
+       addButton.innerHTML = add;      
     }
 }
 
