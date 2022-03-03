@@ -12,6 +12,8 @@ if(products.length === 0) {
 }
 
 products.forEach((product) => {
+
+    cartContainer.innerHTML = "";
     cartContainer.innerHTML += `<div class="cart-card">
                                     <div class="cart-product">
                                         <img class="cart-image" src="${product.image}" alt="${product.alt}">

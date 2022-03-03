@@ -23,7 +23,7 @@ const description = document.querySelector("#description");
 const image = document.querySelector("#image");
 const idInput = document.querySelector("#id");
 const message = document.querySelector(".message-container");
-const loading = document.querySelector(".loading");
+const loading = document.querySelector(".loader");
 const featured = document.querySelector("#editfeatured");
 
 (async function() {
@@ -32,6 +32,8 @@ const featured = document.querySelector("#editfeatured");
         const response = await fetch(productsUrl);
         const details = await response.json();
         console.log(details);
+
+
 
         let imageCheck = "";
         if (details.image) {
