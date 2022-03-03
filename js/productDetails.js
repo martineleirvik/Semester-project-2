@@ -1,8 +1,10 @@
 import { baseUrl } from "./settings/api.js";
 import navBar from "./components/navBar.js";
 import { getFromStorage } from "./utils/storage.js";
+import { navSlide } from "./components/navSlide.js";
 
 navBar();
+navSlide();
 
 const detailsContainer = document.querySelector(".details");
 
