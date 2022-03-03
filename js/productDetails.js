@@ -107,7 +107,7 @@ function checkIfInStorage() {
     const productExsist = currentProducts.find(function(item) {
         return item.id === id;
     });
-    const productId = productExsist.id;
+    const productId = productExsist;
 
     console.log(productId);
 

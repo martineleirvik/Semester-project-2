@@ -15,12 +15,19 @@ h2 {
   margin: 30px 0;
 }
 
-body {
-  height: 100vh;
-}
-
 main {
   margin-bottom: 50px;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
 }
 
 footer {
@@ -32,17 +39,6 @@ footer {
   font-size: 1.2rem;
   padding: 20px 0;
   margin-top: auto;
-}
-
-.flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100vh;
 }
 
 .active {
@@ -97,6 +93,7 @@ nav .menu {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #909090;
+  font-size: 1rem;
 }
 
 nav .menu .customer-menu {
@@ -107,8 +104,10 @@ nav .menu .customer-menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-bottom: 0;
 }
 
 nav .menu .customer-menu li {
@@ -118,10 +117,12 @@ nav .menu .customer-menu li {
 nav .menu .customer-menu li a {
   color: #000000;
   text-decoration: none;
+  padding: 12px 7px;
 }
 
 nav .menu .customer-menu li a:hover {
-  color: #506a7d;
+  background-color: #dbdbdb;
+  font-weight: bold;
 }
 
 nav .menu .customer-menu .active {
@@ -136,9 +137,10 @@ nav .menu .admin-menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-bottom: 0;
 }
 
 nav .menu .admin-menu li {
@@ -149,16 +151,21 @@ nav .menu .admin-menu li a {
   color: #000000;
   text-decoration: none;
   float: right;
+  padding: 10px 5px;
 }
 
 nav .menu .admin-menu li a:hover {
-  color: #506a7d;
+  background-color: #dbdbdb;
+  font-weight: bold;
 }
 
 nav .menu .admin-menu #logout-link {
-  padding: 0 10px;
   border: none;
   background-color: #ffffff;
+}
+
+nav .menu .admin-menu #logout-link:hover {
+  background-color: #dbdbdb;
 }
 
 nav .menu .admin-menu .active {
@@ -174,6 +181,9 @@ nav .menu .admin-menu .active {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   nav .logo h1 {
     margin-left: 40px;
@@ -213,17 +223,16 @@ nav .menu .admin-menu .active {
             flex-direction: column;
     border-bottom: none;
   }
+  nav .menu-container .customer-menu {
+    width: 100%;
+  }
   nav .menu-container .customer-menu ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    text-align: center;
+    padding-left: 0;
   }
   nav .menu-container .customer-menu li {
     opacity: 0;
@@ -232,17 +241,16 @@ nav .menu .admin-menu .active {
   nav .menu-container .customer-menu li:first-child {
     padding-top: 50px;
   }
+  nav .menu-container .admin-menu {
+    width: 100%;
+  }
   nav .menu-container .admin-menu ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    text-align: center;
+    padding-left: 0;
   }
   nav .menu-container .admin-menu li {
     opacity: 0;
@@ -426,6 +434,8 @@ form button {
 
 .hero-banner .hero-text p {
   margin: 0 auto;
+  font-family: "Lora", serif;
+  font-style: italic;
 }
 
 @media (min-width: 700px) {

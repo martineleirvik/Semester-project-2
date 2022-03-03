@@ -4,7 +4,7 @@ const featuredProducts = document.querySelector(".featured-slide");
 
 export function getFeaturedProducts(products) {
 
-    featuredProducts.innerHTML = "";
+    featuredProducts.innerHTML = ""; 
 
     products.forEach(function (product){
 

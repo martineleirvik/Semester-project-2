@@ -14,7 +14,7 @@ export default function navBar() {
         loginLink = `<ul>
         <li><a href="addProducts.html" class="${pathname === "/addProducts.html" ? "active" : ""}">Add products</a></li>
         <li><a href="editProducts.html" class="${pathname === "/editProducts.html" ? "active" : ""}">Edit products</a></li>
-        <li><button id="logout-link">Logout <strong>${username}</strong></button></li>
+        <li><a><button id="logout-link">Logout <strong>${username}</strong></button></a></li>
         </ul>`}
 
     container.innerHTML = `<div class="menu">
