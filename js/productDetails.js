@@ -117,6 +117,7 @@ function checkIfInStorage() {
     else {
        addButton.innerHTML = add;      
     }
+    
 }
 
 checkIfInStorage();

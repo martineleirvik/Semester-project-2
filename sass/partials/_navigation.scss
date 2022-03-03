@@ -55,8 +55,8 @@ nav {
           padding: 12px 7px;
         }
         a:hover {
-          background-color: rgb(219, 219, 219);
-          font-weight: bold;
+          background-color: getColour(primary);
+          color: getColour(allwhite);
         }
       }
 
@@ -85,7 +85,6 @@ nav {
         }
         a:hover {
           background-color: rgb(219, 219, 219);
-          font-weight: bold;
         }
       }
 
@@ -151,6 +150,9 @@ nav {
         li {
           opacity: 0;
           padding-bottom: 50px;
+          a:hover {
+            font-weight: bold;
+          }
         }
         li:first-child {
           padding-top: 50px;
