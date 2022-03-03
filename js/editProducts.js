@@ -2,8 +2,13 @@ import { baseUrl } from "./settings/api.js";
 import { displayMessage } from "./components/displayMessage.js";
 import navBar from "./components/navBar.js";
 import { editRenderProducts } from "./ui/editRenderProducts.js";
+import { navSlide } from "./components/navSlide.js";
+import { cartNumbers } from "./components/cartNumbers.js";
+
 
 navBar();
+navSlide();
+cartNumbers();
 
 const productsUrl = baseUrl + "/products";
 

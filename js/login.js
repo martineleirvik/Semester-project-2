@@ -2,6 +2,9 @@ import { displayMessage } from "./components/displayMessage.js";
 import { saveToken, saveUser } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 import navBar from "./components/navBar.js";
+import { navSlide } from "./components/navSlide.js";
+import { cartNumbers } from "./components/cartNumbers.js";
+
 
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
@@ -9,6 +12,8 @@ const password = document.querySelector("#password");
 const message = document.querySelector(".message-container");
 
 navBar();
+navSlide();
+cartNumbers();
 
 form.addEventListener("submit", submitForm);
 

@@ -1,7 +1,11 @@
 import navBar from "./components/navBar.js";
+import { navSlide } from "./components/navSlide.js";
 import { getFromStorage } from "./utils/storage.js";
+import { cartNumbers } from "./components/cartNumbers.js";
 
 navBar();
+navSlide();
+cartNumbers();
 
 const products = getFromStorage("products");
 const cartContainer = document.querySelector(".cart-container");
@@ -69,7 +73,7 @@ parseData.map(data => {
     button.addEventListener("click", handleRemovingProduct)
 }
 
-function getProductFromStorage () {
+export function getProductFromStorage () {
     const removeFromStorage = localStorage.getItem("products");
 
     if(!removeFromStorage) {
@@ -98,10 +102,3 @@ function handleRemovingProduct() {
 function saveProduct(prod) {
     localStorage.setItem("products", JSON.stringify(prod));
 }
-
-const currentStorage = getProductFromStorage().length;
-
-const numberInStorage = parseInt(currentStorage)
-console.log(typeof numberInStorage);
-
-

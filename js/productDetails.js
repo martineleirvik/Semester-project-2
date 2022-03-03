@@ -2,9 +2,11 @@ import { baseUrl } from "./settings/api.js";
 import navBar from "./components/navBar.js";
 import { getFromStorage } from "./utils/storage.js";
 import { navSlide } from "./components/navSlide.js";
+import { cartNumbers } from "./components/cartNumbers.js";
 
 navBar();
 navSlide();
+cartNumbers();
 
 const detailsContainer = document.querySelector(".details");
 
