@@ -84,7 +84,8 @@ nav {
           padding: 10px 5px;
         }
         a:hover {
-          background-color: rgb(219, 219, 219);
+          background-color: getColour(primary);
+          color: getColour(allwhite);
         }
       }
 
@@ -93,7 +94,8 @@ nav {
         background-color: getColour(allwhite);
       }
       #logout-link:hover {
-        background-color: rgb(219, 219, 219);
+        background-color: getColour(primary);
+        color: getColour(allwhite);
       }
       .active {
         text-decoration: underline;

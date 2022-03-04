@@ -155,7 +155,8 @@ nav .menu .admin-menu li a {
 }
 
 nav .menu .admin-menu li a:hover {
-  background-color: #dbdbdb;
+  background-color: #7aa2bc;
+  color: #ffffff;
 }
 
 nav .menu .admin-menu #logout-link {
@@ -164,7 +165,8 @@ nav .menu .admin-menu #logout-link {
 }
 
 nav .menu .admin-menu #logout-link:hover {
-  background-color: #dbdbdb;
+  background-color: #7aa2bc;
+  color: #ffffff;
 }
 
 nav .menu .admin-menu .active {

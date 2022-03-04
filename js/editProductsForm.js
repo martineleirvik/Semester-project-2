@@ -123,5 +123,4 @@ async function updateProduct(title, price, description, image, featured, id) {
     catch(error) {
         displayMessage("error", "An error occured", ".message-container");
     }
-
 }

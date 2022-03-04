@@ -25,7 +25,7 @@ products.forEach((product) => {
                                         <span class="cart-price">$${product.price}</span>
                                         <a class="cart-view" href="productDetails.html?id=${product.id}">View product</a>
                                         <div class="cart-quantity">
-                                            <input class="cart-quantity-input" type="number" value="1">
+                                            <input class="cart-quantity-input" type="number" min="1" value="1">
                                             <button class="btn-remove" type="button" data-id="${product.id}">Remove</button>
                                         </div>
                                     
