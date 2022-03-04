@@ -8,16 +8,16 @@ export function getFeaturedProducts(products) {
 
     products.forEach(function (product){
 
-        let imageCheck = "";
+        let checkIfImage = "";
         
         if(product.image) {
-            imageCheck = baseUrl + product.image.url;
+            checkIfImage = baseUrl + product.image.url;
         }
         if (product.image_url) {
-            imageCheck = product.image_url;
+            checkIfImage = product.image_url;
         }
         featuredProducts.innerHTML += `<a class="featured-card" href="productDetails.html?id=${product.id}">
-        <img class="featured-image" src="${imageCheck}" alt="${product.title}">
+        <img class="featured-image" src="${checkIfImage}" alt="${product.title}">
         <div class="feat-tx">
         <h4>${product.title}</h4>
         <p>$${product.price}</p>

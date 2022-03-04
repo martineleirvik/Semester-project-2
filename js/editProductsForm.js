@@ -37,20 +37,19 @@ const featured = document.querySelector("#editfeatured");
         const details = await response.json();
         console.log(details);
 
+        let checkIfImage = "";
 
-
-        let imageCheck = "";
         if (details.image) {
-            imageCheck = baseUrl + details.image.url;
+            checkIfImage = baseUrl + details.image.url;
         }
         if (details.image_url) {
-            imageCheck = details.image_url;
+            checkIfImage = details.image_url;
         }
 
         title.value = details.title;
         price.value = details.price;
         description.value = details.description;
-        image.value = imageCheck;
+        image.value = checkIfImage;
         idInput.value = details.id;
         featured.checked = details.featured;
 

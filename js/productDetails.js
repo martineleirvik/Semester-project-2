@@ -28,31 +28,29 @@ const detailsUrl = baseUrl + "/products/" + id;
 
     detailsContainer.innerHTML = "";
 
-    let imageCheck = "";
+    let checkIfImage = "";
         
     if(details.image) {
-        imageCheck = baseUrl + details.image.url;
+        checkIfImage = baseUrl + details.image.url;
     }
     if (details.image_url) {
-        imageCheck = details.image_url;
+        checkIfImage = details.image_url;
     }
 
     detailsContainer.innerHTML = `<div class="product-wrapper">
                                     <div class="image-wrapper"> 
-                                        <img class="product-detail-image" src="${imageCheck}" alt="${details.title}">
+                                        <img class="product-detail-image" src="${checkIfImage}" alt="${details.title}">
                                     </div>
                                     <div class="text-wrapper">
                                         <h2>${details.title}</h2>
                                         <p id="price">$${details.price}</p>
                                         <p id="description">Product description:</p>
                                         <p id="description-text">${details.description}</p>
-                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="${imageCheck}" data-alt="${details.title}">Add to Cart</button>
+                                        <button class="addBtn" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="${checkIfImage}" data-alt="${details.title}">Add to Cart</button>
                                     </div>
                                 </div>`;
 
     const addBtn = document.querySelector(".text-wrapper .addBtn");
-    console.log(addBtn);
-
     const currentProducts = getFromStorage("products");
     const productExsist = currentProducts.find(function(item) {
         return item.id === id;

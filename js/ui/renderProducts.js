@@ -10,17 +10,17 @@ export function renderProducts(render) {
 
     render.forEach(function (product){
 
-        let imageCheck = "";
+        let checkIfImage = "";
         
         if(product.image) {
-            imageCheck = baseUrl + product.image.url;
+            checkIfImage = baseUrl + product.image.url;
         }
         if (product.image_url) {
-            imageCheck = product.image_url;
+            checkIfImage = product.image_url;
         }
 
         productsContainer.innerHTML += `<a class="card" href="productDetails.html?id=${product.id}">
-                                            <img class="product-image" src="${imageCheck}" alt="${product.title}">
+                                            <img class="product-image" src="${checkIfImage}" alt="${product.title}">
                                             <div class="product-info">
                                             <h3>${product.title}</h3>
                                             <h4>$${product.price}</h4>
