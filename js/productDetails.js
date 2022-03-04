@@ -50,13 +50,25 @@ const detailsUrl = baseUrl + "/products/" + id;
                                     </div>
                                 </div>`;
 
+    const addBtn = document.querySelector(".text-wrapper .addBtn");
+    console.log(addBtn);
 
+    const currentProducts = getFromStorage("products");
+    const productExsist = currentProducts.find(function(item) {
+        return item.id === id;
+    });
 
-const addButton = document.querySelectorAll(".text-wrapper button");
-console.log(addButton);
+    if(productExsist) {
+        productExsist.id === id;
+        addBtn.innerHTML = added;
+    }
+    else {
+       addBtn.innerHTML = add;  
+    }
 
-addButton.forEach((button) => {
-    button.addEventListener("click", addToCart);
+    const addButton = document.querySelectorAll(".text-wrapper button");
+    addButton.forEach((button) => {
+        button.addEventListener("click", addToCart);
 
 });
 
@@ -96,28 +108,3 @@ function saveToStorage(prod) {
 }
 
 })();
-
-/// check if product is in LS and then adding matching innerHTML for the button
-
-function checkIfInStorage() {
-
-    const addButton = document.querySelectorAll(".text-wrapper button");
-    const currentProducts = getFromStorage("products");
-
-    const productExsist = currentProducts.find(function(item) {
-        return item.id === id;
-    });
-    const productId = productExsist.id;
-
-    console.log(productId);
-
-    if(productId === id) {
-        addButton.innerHTML = added;
-    }
-    else {
-       addButton.innerHTML = add;      
-    }
-    
-}
-
-checkIfInStorage();
