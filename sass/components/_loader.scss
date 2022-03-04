@@ -1,6 +1,6 @@
 .loader {
-  border: 10px solid #cccccc;
-  border-top: 10px solid #000000;
+  border: 10px solid getColour(secondary);
+  border-top: 10px solid getColour(black);
   border-radius: 50%;
   width: 100px;
   height: 100px;

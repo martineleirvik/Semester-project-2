@@ -312,7 +312,7 @@ nav .menu .admin-menu .active {
 }
 
 .loader {
-  border: 10px solid #cccccc;
+  border: 10px solid #909090;
   border-top: 10px solid #000000;
   border-radius: 50%;
   width: 100px;
