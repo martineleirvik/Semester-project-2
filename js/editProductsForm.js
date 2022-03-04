@@ -1,10 +1,17 @@
 import { baseUrl } from "./settings/api.js";
 import { getToken } from "./utils/storage.js";
+import { getUsername } from "./utils/storage.js";
 import { displayMessage } from "./components/displayMessage.js";
 import navBar from "./components/navBar.js";
 import { deleteButton } from "./components/delete/deleteBtn.js"
 import { navSlide } from "./components/navSlide.js";
 import { cartNumbers } from "./components/cartNumbers.js";
+import { userKey } from "./settings/storageKey.js";
+
+const userName = getUsername();
+if(!userName) {
+    location.href = "/";
+}
 
 navBar();
 navSlide();

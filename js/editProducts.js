@@ -4,7 +4,12 @@ import navBar from "./components/navBar.js";
 import { editRenderProducts } from "./ui/editRenderProducts.js";
 import { navSlide } from "./components/navSlide.js";
 import { cartNumbers } from "./components/cartNumbers.js";
+import { getUsername } from "./utils/storage.js";
 
+const userName = getUsername();
+if(!userName) {
+    location.href = "/";
+}
 
 navBar();
 navSlide();

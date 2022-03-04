@@ -4,6 +4,12 @@ import { navSlide } from "./components/navSlide.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 import { cartNumbers } from "./components/cartNumbers.js";
+import { getUsername } from "./utils/storage.js";
+
+const userName = getUsername();
+if(!userName) {
+    location.href = "/";
+}
 
 navBar();
 navSlide();
@@ -41,8 +47,6 @@ async function addProducts(title, price, description, featured, image) {
     const url = baseUrl + "/products";
 
     const data = JSON.stringify({title: title, price: price, description: description, featured: featured, image_url: image});
-
-    const token = getToken();
 
     const options = {
         method: "POST",
