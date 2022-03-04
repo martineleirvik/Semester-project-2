@@ -43,7 +43,7 @@ parseData.map(data => {
         cartTotal += parseFloat(data.price);
 });
         
- total.innerHTML += `<p class="amount">Total: <strong>$${cartTotal}</strong></p>`;
+ total.innerHTML += `<p class="amount">Total: <strong>$${cartTotal.toFixed(2)}</strong></p>`;
 
 
 

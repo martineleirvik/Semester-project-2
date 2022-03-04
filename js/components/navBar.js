@@ -8,7 +8,7 @@ export default function navBar() {
 
     const username = getUsername();
     
-    let loginLink = `<li><a href="login.html" class="${pathname === "/login.html" ? "active" : ""}">Login</a></li>`;
+    let loginLink = `<ul><li><a href="login.html" class="${pathname === "/login.html" ? "active" : ""}">Login</a></li></ul>`;
 
     if (username) {
         loginLink = `<ul>
