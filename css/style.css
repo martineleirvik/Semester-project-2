@@ -266,6 +266,12 @@ nav .menu .admin-menu .active {
   }
 }
 
+@media (max-width: 390px) {
+  nav .logo a {
+    font-size: 1.2rem;
+  }
+}
+
 .nav-active {
   -webkit-transform: translateX(0%) !important;
           transform: translateX(0%) !important;
