@@ -621,7 +621,7 @@ h4 {
 
 .product-wrapper .text-wrapper #description-text {
   max-width: 500px;
-  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .product-wrapper .text-wrapper #price {
