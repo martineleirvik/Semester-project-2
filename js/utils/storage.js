@@ -22,11 +22,15 @@ export function getUsername() {
     return null;
 }
 
-export function clearKeyStorage() {
+export function clearUserStorage() {
     localStorage.removeItem(userKey);
 }
 
-export function saveToStorage(key, value) {
+export function clearTokenStorage() {
+    localStorage.removeItem(tokenKey);
+}
+
+function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 

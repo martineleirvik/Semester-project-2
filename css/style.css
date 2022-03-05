@@ -475,6 +475,9 @@ h4 {
 
 .delete {
   margin-top: 20px;
+  border: 4px solid #506a7d;
+  background: white;
+  color: #506a7d;
 }
 
 .featured {

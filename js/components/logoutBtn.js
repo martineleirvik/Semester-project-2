@@ -1,5 +1,5 @@
-import { getUsername, clearKeyStorage } from "../utils/storage.js";
-import { userKey } from "../settings/storageKey.js";
+import { clearUserStorage, clearTokenStorage } from "../utils/storage.js";
+import { tokenKey, userKey } from "../settings/storageKey.js";
 
 export function logoutBtn() {
 
@@ -10,7 +10,8 @@ export function logoutBtn() {
             const doLogout = confirm("Are you sure you want to logout?");
 
             if(doLogout) {
-                clearKeyStorage(userKey);
+                clearUserStorage(userKey);
+                clearTokenStorage(tokenKey);
                 location.href = "/";
             }
         };

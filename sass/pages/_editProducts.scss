@@ -13,6 +13,9 @@ h4 {
 
 .delete {
   margin-top: 20px;
+  border: 4px solid getColour(darkblue);
+  background: white;
+  color: getColour(darkblue);
 }
 
 .featured {
