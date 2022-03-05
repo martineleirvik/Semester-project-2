@@ -6,7 +6,6 @@ import navBar from "./components/navBar.js"
 import { navSlide } from "./components/navSlide.js";
 import { cartNumbers } from "./components/cartNumbers.js";
 
-
 navBar();
 navSlide();
 cartNumbers();
@@ -18,7 +17,6 @@ const productsUrl = baseUrl + "/products";
     try {
         const response = await fetch(productsUrl);
         const json = await response.json();
-        console.log(json);
 
         renderProducts(json);
         searchProducts(json);

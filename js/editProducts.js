@@ -22,7 +22,6 @@ const productsUrl = baseUrl + "/products";
     try {
         const response = await fetch(productsUrl);
         const json = await response.json();
-        console.log(json);
 
         editRenderProducts(json);
 

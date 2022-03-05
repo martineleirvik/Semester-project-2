@@ -48,6 +48,8 @@ async function addProducts(title, price, description, featured, image) {
 
     const data = JSON.stringify({title: title, price: price, description: description, featured: featured, image_url: image});
 
+    const token = getToken();
+
     const options = {
         method: "POST",
         body: data,
@@ -60,8 +62,6 @@ async function addProducts(title, price, description, featured, image) {
     try {
         const response = await fetch (url, options);
         const json = await response.json();
-
-        console.log(json);
 
         if (json.created_at) {
             displayMessage("success", "Product added", ".message-container");

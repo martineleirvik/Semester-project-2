@@ -6,7 +6,6 @@ import navBar from "./components/navBar.js";
 import { deleteButton } from "./components/delete/deleteBtn.js"
 import { navSlide } from "./components/navSlide.js";
 import { cartNumbers } from "./components/cartNumbers.js";
-import { userKey } from "./settings/storageKey.js";
 
 const userName = getUsername();
 if(!userName) {
@@ -42,7 +41,6 @@ const featured = document.querySelector("#editfeatured");
     try {
         const response = await fetch(productsUrl);
         const details = await response.json();
-        console.log(details);
 
         let checkIfImage = "";
 
@@ -87,8 +85,6 @@ function submitForm(event) {
     const idValue = idInput.value;
     const featuredValue = featured.checked;
 
-    console.log("priceValue", featured);
-
     if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageValue.length === 0) {
         return displayMessage("warning", "Enter valid values", ".message-container");
     }
@@ -116,8 +112,6 @@ async function updateProduct(title, price, description, image, featured, id) {
     try {
         const response = await fetch (url, options);
         const json = await response.json();
-
-        console.log(json);
 
         if(json.updated_at) {
             displayMessage("success", "Product updated", ".message-container");

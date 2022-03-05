@@ -61,12 +61,6 @@ parseData.map(data => {
             }
  }
 
-
- const inputQuantity = document.querySelector(".cart-quantity-input").value;
- console.log(inputQuantity);
-
-
-
  const removeCartProductBtn = document.querySelectorAll(".btn-remove");
     for (var i = 0; i < removeCartProductBtn.length; i++) {
     var button = removeCartProductBtn[i]
@@ -84,7 +78,6 @@ export function getProductFromStorage () {
 
 function handleRemovingProduct() {
     const id = this.dataset.id;
-    console.log("id", id);
 
     const currentProd = getProductFromStorage();
 

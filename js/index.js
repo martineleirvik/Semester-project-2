@@ -18,15 +18,12 @@ cartNumbers();
     try {
         const response = await fetch(homeUrl);
         const json = await response.json();
-        console.log(json);
 
         const responseFeat = await fetch(featuredUrl);
         const jsonFeat = await responseFeat.json();
-        console.log(jsonFeat);
 
         createHero(json);
         getFeaturedProducts(jsonFeat);
-
         
     }
     catch (error) {
