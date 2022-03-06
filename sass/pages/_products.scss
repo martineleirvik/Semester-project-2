@@ -10,6 +10,7 @@
     width: 200px;
     border-radius: 15px;
     border: 1px solid getColour(secondary);
+    font-size: 1rem;
   }
   .search:focus {
     outline: 1px solid getColour(darkblue);
@@ -62,6 +63,14 @@
   margin: 30px;
   text-align: center;
   font-size: 1.5rem;
+}
+
+@media (max-width: 350px) {
+  .container {
+    button {
+      font-size: 1.1rem;
+    }
+  }
 }
 
 @media (min-width: 700px) {
