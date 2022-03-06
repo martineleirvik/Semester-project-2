@@ -243,9 +243,6 @@ nav .menu .admin-menu .active {
     opacity: 0;
     padding-bottom: 50px;
   }
-  nav .menu-container .customer-menu li a:hover {
-    font-weight: bold;
-  }
   nav .menu-container .customer-menu li:first-child {
     padding-top: 50px;
   }
