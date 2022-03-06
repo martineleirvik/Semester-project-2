@@ -53,7 +53,9 @@ const detailsUrl = baseUrl + "/products/" + id;
     const addBtn = document.querySelector(".text-wrapper .addBtn");
     const currentProducts = getFromStorage("products");
     const productExsist = currentProducts.find(function(item) {
-        return item.id === id;
+        if(item.id === id) {
+            return true;
+        }
     });
 
     if(productExsist) {
@@ -87,7 +89,9 @@ function addToCart(event) {
     const currentProducts = getFromStorage("products");
 
     const productExsists = currentProducts.find(function(item) {
-        return item.id === id;
+        if(item.id === id) {
+            return true;
+        }
     });
 
     if(!productExsists) {

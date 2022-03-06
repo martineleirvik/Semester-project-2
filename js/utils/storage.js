@@ -38,7 +38,7 @@ export function getFromStorage(key) {
     const value = localStorage.getItem(key);
 
     if(!value) {
-        return null;
+        return [];
     }
     return JSON.parse(value);
 }
