@@ -6,7 +6,7 @@ Get use of everything we have learned so far to create an e-commerce website bui
 
 ## Description
 
-The e-commerce website has both customer-facing and admin sections which is only visable to logged in admin users.
+The e-commerce website has both customer-facing and admin sections, which the admin sections is only visable to logged in admin users.
 
 The data is populated by a Strapi API supplied by Noroff that is deployed locally. 
 
