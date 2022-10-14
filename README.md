@@ -40,3 +40,7 @@ Clone the repo:
 ```bash
 git clone git@github.com:martineleirvik/Semester-project-2.git
 ```
+
+## Contact 
+
+[My LinkedIn profile](https://www.linkedin.com/in/martine-leirvik-b632561b5/)
